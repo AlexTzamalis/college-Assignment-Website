@@ -80,13 +80,14 @@
                 background: white;
                 padding: 32px;
                 border-radius: 8px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
                 text-align: center;
-                transition: transform 0.3s;
+                transition: transform 0.3s, box-shadow 0.3s;
             }
 
             .mission-card:hover {
-                transform: translateY(-5px);
+                transform: translateY(-10px);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
             }
 
             .mission-card i {
@@ -174,97 +175,78 @@
                 padding: 20px;
                 text-align: center;
                 border-bottom: 1px solid #eee;
-                transition: all 0.3s ease;
-            }
-
-            .milestones-table tr:last-child td {
-                border-bottom: none;
-            }
-
-            .milestones-table tr:nth-child(even) {
-                background-color: #f8f9fa;
+                transition: all 0.2s ease;
             }
 
             .milestones-table tr:hover td {
-                background-color: #f0f2f5;
-                transform: scale(1.01);
+                background-color: #dfdfdf;
             }
 
-            /* Values Section Simplified Styling */
-            .values-section {
+            /* Achievements section styling */
+            .achievements-section {
                 padding: 64px 32px;
-                background: #f8f9fa;
+                background-color: #f8f9fa;
             }
 
-            .values-section h2 {
-                text-align: center;
-                color: rgb(18, 18, 88);
-                font-size: 24px;
-                margin-bottom: 48px;
-            }
-
-            .values-container {
+            .achievements-container {
                 max-width: 1200px;
                 margin: 0 auto;
+            }
+
+            .achievements-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 32px;
-                padding: 16px;
             }
 
-            .value-card {
+            .achievement-card {
                 background: white;
-                border-radius: 10px;
                 padding: 32px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+                transition: transform 0.4s, box-shadow 0.4s;
             }
 
-            .value-title {
+            .achievement-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .achievement-card h3 {
                 color: rgb(18, 18, 88);
-                font-size: 29px;
-                font-weight: 600;
-                margin-bottom: 24px;
-                padding-bottom: 8px;
-                border-bottom: 2px solid #eee;
+                margin-bottom: 16px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
             }
 
-            .value-categories {
-                list-style: none;
-                padding: 0;
-                margin: 0;
+            .achievement-card h3 i {
+                font-size: 1.5rem;
             }
 
-            .value-category {
-                margin-bottom: 24px;
-            }
-
-            .category-title {
-                color: #333;
-                font-size: 20px;
-                font-weight: 600;
+            .achievement-card p {
+                color: #666;
+                line-height: 1.6;
                 margin-bottom: 16px;
             }
 
-            .category-items {
-                list-style: disc;
-                padding-left: 24px;
-                margin: 8px 0;
+            .achievement-list {
+                list-style: none;
+                padding: 0;
+                margin-top: 16px;
             }
 
-            .category-item {
-                margin: 8px 0;
-                color: #555;
-            }
-
-            .sub-items {
-                list-style: circle;
-                padding-left: 24px;
-                margin: 8px 0;
-            }
-
-            .sub-item {
+            .achievement-list li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
                 color: #666;
-                margin: 5px 0;
+            }
+
+            .achievement-list li i {
+                color: rgb(18, 18, 88);
+                font-size: 14px;
             }
 
             @media screen and (max-width: 768px) {
@@ -284,18 +266,12 @@
                     white-space: nowrap;
                 }
 
-                .value-card {
-                    padding: 24px;
-                }
-
-                .value-title {
-                    font-size: 24px;
-                }
-
-                .category-title {
-                    font-size: 18px;
+                .achievements-grid {
+                    grid-template-columns: 1fr;
                 }
             }
+
+  
         </style>
     </head>
 
@@ -422,135 +398,76 @@
                 </div>
             </section>
 
-            <!-- Company Values Section -->
-            <section class="values-section">
-                <h2>Οι Αξίες μας</h2>
-                <div class="values-container">
-                    <div class="value-card">
-                        <h3 class="value-title">Επενδύσεις</h3>
-                        <ul class="value-categories">
-                            <li class="value-category">
-                                <div class="category-title">Επιχειρηματικές</div>
-                                <ul class="category-items">
-                                    <li class="category-item">
-                                        Εμπορικά κτίρια
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Κέντρα εμπορίου</li>
-                                            <li class="sub-item">Καταστήματα</li>
-                                            <li class="sub-item">Εμπορικά συγκροτήματα</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Βιομηχανικοί χώροι
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Βιομηχανικές μονάδες</li>
-                                            <li class="sub-item">Αποθήκες</li>
-                                            <li class="sub-item">Λογιστικά κέντρα</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Γραφεία
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Εταιρικά κτίρια</li>
-                                            <li class="sub-item">Συνεταιριστικά γραφεία</li>
-                                            <li class="sub-item">Κοινόχρηστοι χώροι</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="value-category">
-                                <div class="category-title">Κατοικίες</div>
-                                <ul class="category-items">
-                                    <li class="category-item">
-                                        Διαμερίσματα
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Μονοκατοικίες</li>
-                                            <li class="sub-item">Διώροφα</li>
-                                            <li class="sub-item">Πεντάροφα</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Μονοκατοικίες
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Σύγχρονες</li>
-                                            <li class="sub-item">Κλασικές</li>
-                                            <li class="sub-item">Με κήπο</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Βίλες
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Παραθαλάσσιες</li>
-                                            <li class="sub-item">Με θέα</li>
-                                            <li class="sub-item">Με πισίνα</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+            <!-- Επιπλέον υπηρεσίες που προσφέρει η εταιρεία μαζι με εικονίδια για καλύτερη παρουσίαση-->
+            <section class="additional-services">
+                <h2>Επιπλέον Υπηρεσίες</h2>
+
+                <!-- Grid για τις επιπλέον υπηρεσίες-->
+                <div class="services-grid-2">
+
+                    <!-- Card για την υπηρεσία ανακαίνισης και σχεδιασμού-->
+                    <div class="service-item">
+                        <h3><i class="fas fa-paint-roller"></i>Ανακαίνιση και Σχεδιασμός</h3>
+                        <p>Προσφέρουμε ολοκληρωμένες υπηρεσίες ανακαίνισης και σχεδιασμού για το σπίτι των ονείρων σας.</p>
+
+                        <ul class="service-features">
+                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
+                            <li><i class="fas fa-check"></i>Σχεδιασμός εσωτερικών χώρων</li>
+                            <li><i class="fas fa-check"></i>Ανακαίνιση κουζίνας και μπάνιου</li>
+                            <li><i class="fas fa-check"></i>Επισκευές και βελτιώσεις</li>
+                            <li><i class="fas fa-check"></i>Συνεργασία με έμπειρους τεχνικούς</li>
                         </ul>
                     </div>
-                    <div class="value-card">
-                        <h3 class="value-title">Υπηρεσίες</h3>
-                        <ul class="value-categories">
-                            <li class="value-category">
-                                <div class="category-title">Διαχείριση</div>
-                                <ul class="category-items">
-                                    <li class="category-item">
-                                        Συντήρηση
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Περιοδική συντήρηση</li>
-                                            <li class="sub-item">Επείγουσες επισκευές</li>
-                                            <li class="sub-item">Ανακαινίσεις</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Ασφάλεια
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Συστήματα ασφαλείας</li>
-                                            <li class="sub-item">Παρακολούθηση</li>
-                                            <li class="sub-item">Πρόσβαση</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Νομική υποστήριξη
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Συμβόλαια</li>
-                                            <li class="sub-item">Δικηγόροι</li>
-                                            <li class="sub-item">Νομικές συμβουλές</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="value-category">
-                                <div class="category-title">Σύμβουλοι</div>
-                                <ul class="category-items">
-                                    <li class="category-item">
-                                        Αξιολογήσεις
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Αγοραίας αξίας</li>
-                                            <li class="sub-item">Επενδυτικής αξίας</li>
-                                            <li class="sub-item">Φορολογικές</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Μελέτες
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Αγοράς</li>
-                                            <li class="sub-item">Επενδύσεων</li>
-                                            <li class="sub-item">Ανάπτυξης</li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-item">
-                                        Στρατηγικός σχεδιασμός
-                                        <ul class="sub-items">
-                                            <li class="sub-item">Επενδυτικές στρατηγικές</li>
-                                            <li class="sub-item">Ανάπτυξης ακινήτων</li>
-                                            <li class="sub-item">Βελτιστοποίησης</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+
+                    <!-- Card για την υπηρεσία ασφαλείας ακινήτων-->
+                    <div class="service-item">
+                        <h3><i class="fas fa-shield-alt"></i>Ασφάλεια Ακινήτων</h3>
+                        <p>Προστατέψτε το ακίνητό σας με τις καλύτερες λύσεις ασφαλείας της αγοράς.</p>
+
+                        <ul class="service-features">
+                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
+                            <li><i class="fas fa-check"></i>Συστήματα συναγερμού</li>
+                            <li><i class="fas fa-check"></i>Κλειδαριές υψηλής ασφαλείας</li>
+                            <li><i class="fas fa-check"></i>Καμερές παρακολούθησης</li>
+                            <li><i class="fas fa-check"></i>Ασφαλιστικά πακέτα</li>
                         </ul>
+                    </div>
+
+ 
+                </div>
+            </section>
+
+            <!-- Company Achievements Section -->
+            <section class="achievements-section">
+                <div class="achievements-container">
+                    <h2>Επιτεύγματα & Διακρίσεις</h2>
+
+                    <div class="achievements-grid">
+                        <!-- Card for Company Growth -->
+                        <div class="achievement-card">
+                            <h3><i class="fas fa-chart-line"></i>Εξέλιξη & Ανάπτυξη</h3>
+                            <p>Η συνεχής ανάπτυξη και επέκταση της Teralith στην αγορά ακινήτων.</p>
+
+                            <ul class="achievement-list">
+                                <li><i class="fas fa-check"></i>Αύξηση πελατών κατά 200% σε 5 χρόνια</li>
+                                <li><i class="fas fa-check"></i>Επέκταση σε 5 νέα γραφεία</li>
+                                <li><i class="fas fa-check"></i>Διπλασιασμός του τζίρου</li>
+                                <li><i class="fas fa-check"></i>Δημιουργία 50+ νέων θέσεων εργασίας</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card for Industry Recognition -->
+                        <div class="achievement-card">
+                            <h3><i class="fas fa-award"></i>Βραβεία & Διακρίσεις</h3>
+                            <p>Η αναγνώριση της ποιότητας και του επαγγελματισμού μας από την αγορά.</p>
+
+                            <ul class="achievement-list">
+                                <li><i class="fas fa-check"></i>Καλύτερη Εταιρεία Ακινήτων 2023</li>
+                                <li><i class="fas fa-check"></i>Βραβείο Καινοτομίας στον Τομέα</li>
+                                <li><i class="fas fa-check"></i>Πιστοποίηση ISO 9001</li>
+                                <li><i class="fas fa-check"></i>Βραβείο Εξυπηρέτησης Πελατών</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -594,7 +511,8 @@
             </div>
         </footer>
 
-        <!-- External JavaScript that modifies the button via media queries to change the icon when inside the dropdown menu and when not inside. -->
+        <!-- External JavaScript που αλλάζει το icon του dropdown menu ανάλογα με την κατάσταση του menu (Η "X" ή το "3 lines" span)
+             Υπάρχει σε όλες τις σελίδες και είναι το ίδιο script μαζι με το Navigation bar της σελίδας. -->
         <script src="JAVASCRIPT/dropdown.js"></script>
     </body>
 </html> 
