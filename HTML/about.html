@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<!-- 
+    ============================================================
+    Σχετικά με εμάς - Real Estate Website (Teralith)
+    ===========================================================
+    
+    Αυτή είναι η σελίδα "Σχετικά με εμάς" του Teralith Project.
+    Παρουσιάζει την ιστορία της εταιρείας, την ομάδα μας,
+    και την προσέγγισή στον τομέα των ακινήτων.
+-->
+
+<html lang="el">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teralith - Σχετικά με εμάς</title>
+        
+        <!--  Εξωτερικά CSS αρχεία
+            styles.css: Βασικά στυλ για ολες τις σελίδες.
+            navigation.css: Ολα τα βασικα στυλ για Headers/Navigation/Logo/Footer και μερικά εξτρά όπως Universal selectors (*). -->
+        <link rel="stylesheet" href="../CSS/navigation.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <!-- EMBEDED CODE FROM GOOGLE FONTS https://fonts.google.com/selection/embed
+            Google Fonts: Εισαγωγή της γραμματοσειράς Montserrat με διαφορετικά βάρη (Weight:).
+            Χρησιμοποιείται για την τυπογραφία ολόκληρης της ιστοσελίδας .
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <!-- 
+            Font Awesome CDN: Βιβλιοθήκη εικονιδίων για την ιστοσελίδα.
+            Χρησιμοποιείται για τα εικονίδια επικοινωνίας, πλοήγησης και για Mobile menu.
+        -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <style>
+
+            /* Hero section για την σελίδα υπηρεσιών
+               Αλλάζει το Background Image μαζι με linear gradient για να είναι πιο ορατό και ελκυστικό. με λιγο opacity για να ειναι πιο "transparent" 
+               το Κεντραρει και βαζει padding και margin και το text στο κεντρο*/
+            .about-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../IMAGES/background_2.jpg');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                text-align: center;
+                padding: 96px 32px;
+                margin-bottom: 64px;
+            }
+
+            .about-hero h1 {
+                font-size: 48px;
+                margin-bottom: 16px;
+            }
+
+            .about-hero p {
+                font-size: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            /* Mission section styling */
+            .mission-section {
+                padding: 64px 32px;
+                background-color: #f8f9fa;
+            }
+
+            .mission-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+
+            .mission-card {
+                background: white;
+                padding: 32px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                transition: transform 0.3s;
+            }
+
+            .mission-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .mission-card i {
+                font-size: 40px;
+                color: rgb(18, 18, 88);
+                margin-bottom: 32px;
+            }
+
+            /* Story section styling */
+            .story-section {
+                padding: 64px 32px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .story-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 64px;
+                align-items: center;
+            }
+
+            .story-text h2 {
+                color: rgb(18, 18, 88);
+                margin-bottom: 24px;
+            }
+
+            .story-text p {
+                line-height: 1.8;
+                color: #666;
+                margin-bottom: 16px;
+            }
+
+            .story-image img {
+                width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Milestones Table Enhanced Styling */
+            .milestones-section {
+                padding: 80px 32px;
+                background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+            }
+
+            .milestones-section h2 {
+                text-align: center;
+                color: rgb(18, 18, 88);
+                font-size: 40px;
+                margin-bottom: 48px;
+                position: relative;
+            }
+
+            .milestones-section h2:after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 3px;
+                background: rgb(18, 18, 88);
+                margin: 16px auto;
+            }
+
+            .milestones-table {
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+                border-collapse: separate;
+                border-spacing: 0;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .milestones-table th {
+                background: rgb(18, 18, 88);
+                color: white;
+                font-weight: 600;
+                padding: 24px;
+                text-transform: uppercase;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+
+            .milestones-table td {
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+                transition: all 0.3s ease;
+            }
+
+            .milestones-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .milestones-table tr:nth-child(even) {
+                background-color: #f8f9fa;
+            }
+
+            .milestones-table tr:hover td {
+                background-color: #f0f2f5;
+                transform: scale(1.01);
+            }
+
+            /* Values Section Simplified Styling */
+            .values-section {
+                padding: 64px 32px;
+                background: #f8f9fa;
+            }
+
+            .values-section h2 {
+                text-align: center;
+                color: rgb(18, 18, 88);
+                font-size: 24px;
+                margin-bottom: 48px;
+            }
+
+            .values-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+                padding: 16px;
+            }
+
+            .value-card {
+                background: white;
+                border-radius: 10px;
+                padding: 32px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .value-title {
+                color: rgb(18, 18, 88);
+                font-size: 29px;
+                font-weight: 600;
+                margin-bottom: 24px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid #eee;
+            }
+
+            .value-categories {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .value-category {
+                margin-bottom: 24px;
+            }
+
+            .category-title {
+                color: #333;
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+
+            .category-items {
+                list-style: disc;
+                padding-left: 24px;
+                margin: 8px 0;
+            }
+
+            .category-item {
+                margin: 8px 0;
+                color: #555;
+            }
+
+            .sub-items {
+                list-style: circle;
+                padding-left: 24px;
+                margin: 8px 0;
+            }
+
+            .sub-item {
+                color: #666;
+                margin: 5px 0;
+            }
+
+            @media screen and (max-width: 768px) {
+                .mission-container,
+                .team-container,
+                .values-container {
+                    grid-template-columns: 1fr;
+                }
+
+                .story-content {
+                    grid-template-columns: 1fr;
+                }
+
+                .milestones-table {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+
+                .value-card {
+                    padding: 24px;
+                }
+
+                .value-title {
+                    font-size: 24px;
+                }
+
+                .category-title {
+                    font-size: 18px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar (το ιδιο Nagivation υπαρχει σε όλες τις σελίδες) για seemless transition μεταξύ των σελίδων-->
+        <div id="index">
+            <nav class="navbar">
+
+                <!-- Navigation div container που περιέχει το Logo και τα links του navigation bar-->
+                <div class="navbar-container">
+
+                    <!-- Logo Εταιρείας με link προς την αρχική σελίδα-->
+                    <a href="index.html" class="navbar-logo">Teralith</a> 
+
+                    <!-- Button για το dropdown menu στο mobile device-->
+                    <button class="navbar-toggle">
+                        <!-- 3 lines για το dropdown menu-->
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+
+                    <!-- unordered list που περιέχει όλα τα links του navigation bar και το active page που αλλάζει χρώμα όταν είστε σε μια σελίδα
+                         Ωστε να διαφέρει απο τα αλλα links ανάλογα με την σελίδα που είστε. -->
+                    <ul class="navbar-menu">
+                        <li><a href="index.html">Αρχική</a></li>
+                        <li><a href="properties.html">Ακίνητα</a></li>
+                        <li><a href="services.html">Υπηρεσίες</a></li>
+                        <li><a href="about.html" class="active-page">Σχετικά με εμάς</a></li>
+                        <li><a href="contact.html">Επικοινωνία</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="about-hero">
+                <h1>Η Ιστορία μας</h1>
+                <p>Από το 2008, η Teralith έχει γίνει συνώνυμο της αξιοπιστίας και της ποιότητας στον τομέα των ακινήτων</p>
+            </section>
+
+            <!-- Mission Section -->
+            <section class="mission-section">
+                <div class="mission-container">
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Η Αποστολή μας</h3>
+                        <p>Να βοηθάμε τους πελάτες μας να βρουν το τέλειο σπίτι, προσφέροντας επαγγελματικές υπηρεσίες και εξατομικές λύσεις.</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Η Όρασή μας</h3>
+                        <p>Να γίνουμε η πρώτη επιλογή για όσους αναζητούν ακίνητα στην Ελλάδα, με έμφαση στην ποιότητα και την εμπιστοσύνη.</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Οι Αξίες μας</h3>
+                        <p>Ειλικρίνεια, επαγγελματισμός και αφοσίωση στην εξυπηρέτηση των πελατών μας.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Story Section -->
+            <section class="story-section">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>Η Ιστορία μας</h2>
+                        <p>Η Teralith ιδρύθηκε το 2008 με ένα απλό όραμα: να αλλάξουμε τον τρόπο που οι άνθρωποι βρίσκουν το σπίτι των ονείρων τους. Ξεκινήσαμε ως μια μικρή ομάδα παθιασμένων επαγγελματιών και έχουμε μεγαλώσει σε μια από τις πιο αξιόπιστες εταιρείες ακινήτων στην Ελλάδα.</p>
+                        <p>Με τα χρόνια, έχουμε βοηθήσει χιλιάδες οικογένειες να βρουν το τέλειο σπίτι, να επενδύσουν σε ακίνητα και να κάνουν σοφές αποφάσεις στον τομέα των ακινήτων. Η εμπειρία μας και η βαθιά κατανόηση της αγοράς μας επιτρέπει να προσφέρουμε εξατομικές λύσεις που ανταποκρίνονται στις μοναδικές ανάγκες κάθε πελάτη.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="../IMAGES/office.jpg" alt="Teralith Office">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Company Milestones Table -->
+            <section class="milestones-section">
+                <div class="container">
+                    <h2>Οι Στιγμές μας</h2>
+                    <table class="milestones-table">
+                        <thead>
+                            <tr>
+                                <th>Χρονιά</th>
+                                <th>Επενδύσεις</th>
+                                <th>Πελάτες</th>
+                                <th>Επενδύσεις</th>
+                                <th>Επενδύσεις</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2015</td>
+                                <td>Ίδρυση</td>
+                                <td>50+</td>
+                                <td>10M€</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2017</td>
+                                <td>Επέκταση</td>
+                                <td>200+</td>
+                                <td>25M€</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>2019</td>
+                                <td>Αναγνώριση</td>
+                                <td>500+</td>
+                                <td>50M€</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>2023</td>
+                                <td>Ηγεσία</td>
+                                <td>1000+</td>
+                                <td>100M€</td>
+                                <td>40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Company Values Section -->
+            <section class="values-section">
+                <h2>Οι Αξίες μας</h2>
+                <div class="values-container">
+                    <div class="value-card">
+                        <h3 class="value-title">Επενδύσεις</h3>
+                        <ul class="value-categories">
+                            <li class="value-category">
+                                <div class="category-title">Επιχειρηματικές</div>
+                                <ul class="category-items">
+                                    <li class="category-item">
+                                        Εμπορικά κτίρια
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Κέντρα εμπορίου</li>
+                                            <li class="sub-item">Καταστήματα</li>
+                                            <li class="sub-item">Εμπορικά συγκροτήματα</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Βιομηχανικοί χώροι
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Βιομηχανικές μονάδες</li>
+                                            <li class="sub-item">Αποθήκες</li>
+                                            <li class="sub-item">Λογιστικά κέντρα</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Γραφεία
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Εταιρικά κτίρια</li>
+                                            <li class="sub-item">Συνεταιριστικά γραφεία</li>
+                                            <li class="sub-item">Κοινόχρηστοι χώροι</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="value-category">
+                                <div class="category-title">Κατοικίες</div>
+                                <ul class="category-items">
+                                    <li class="category-item">
+                                        Διαμερίσματα
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Μονοκατοικίες</li>
+                                            <li class="sub-item">Διώροφα</li>
+                                            <li class="sub-item">Πεντάροφα</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Μονοκατοικίες
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Σύγχρονες</li>
+                                            <li class="sub-item">Κλασικές</li>
+                                            <li class="sub-item">Με κήπο</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Βίλες
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Παραθαλάσσιες</li>
+                                            <li class="sub-item">Με θέα</li>
+                                            <li class="sub-item">Με πισίνα</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="value-card">
+                        <h3 class="value-title">Υπηρεσίες</h3>
+                        <ul class="value-categories">
+                            <li class="value-category">
+                                <div class="category-title">Διαχείριση</div>
+                                <ul class="category-items">
+                                    <li class="category-item">
+                                        Συντήρηση
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Περιοδική συντήρηση</li>
+                                            <li class="sub-item">Επείγουσες επισκευές</li>
+                                            <li class="sub-item">Ανακαινίσεις</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Ασφάλεια
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Συστήματα ασφαλείας</li>
+                                            <li class="sub-item">Παρακολούθηση</li>
+                                            <li class="sub-item">Πρόσβαση</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Νομική υποστήριξη
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Συμβόλαια</li>
+                                            <li class="sub-item">Δικηγόροι</li>
+                                            <li class="sub-item">Νομικές συμβουλές</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="value-category">
+                                <div class="category-title">Σύμβουλοι</div>
+                                <ul class="category-items">
+                                    <li class="category-item">
+                                        Αξιολογήσεις
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Αγοραίας αξίας</li>
+                                            <li class="sub-item">Επενδυτικής αξίας</li>
+                                            <li class="sub-item">Φορολογικές</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Μελέτες
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Αγοράς</li>
+                                            <li class="sub-item">Επενδύσεων</li>
+                                            <li class="sub-item">Ανάπτυξης</li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-item">
+                                        Στρατηγικός σχεδιασμός
+                                        <ul class="sub-items">
+                                            <li class="sub-item">Επενδυτικές στρατηγικές</li>
+                                            <li class="sub-item">Ανάπτυξης ακινήτων</li>
+                                            <li class="sub-item">Βελτιστοποίησης</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+
+            <!-- footer container 1 -->
+            <div class="footer-column">
+                <h4>Επικοινωνία</h4>
+                <ul>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-map-marker-alt"></i> Λεωφ. Καραμαλή 123, Λάρισα</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-phone"></i> 249 5054567</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-envelope"></i> info@teralith.gr</p></li>
+                </ul>
+            </div>
+
+            <!-- footer container 2 -->
+            <div class="footer-column">
+                <h4>Γρήγοροι Σύνδεσμοι</h4>
+                <ul>
+                    <li><a href="index.html">Αρχική</a></li>
+                    <li><a href="properties.html">Ακίνητα</a></li>
+                    <li><a href="services.html">Υπηρεσίες</a></li>
+                    <li><a href="about.html">Σχετικά</a></li>
+                    <li><a href="contact.html">Επικοινωνία</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- footer container 3 -->
+            <div class="footer-column">
+                <h4>Ακολουθήστε μας</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- External JavaScript that modifies the button via media queries to change the icon when inside the dropdown menu and when not inside. -->
+        <script src="../JAVASCRIPT/dropdown.js"></script>
+    </body>
+</html> 

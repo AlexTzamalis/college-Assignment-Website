@@ -1,0 +1,254 @@
+/* Ολα τα στοιχεία Navigation + Footer της ιστοσελίδας θα χρησιμοποιούν τα παρακάτω στοιχεία*/
+
+/* Universal website specifications που θα χρησιμοποιηθούν για "navigation σε όλες τις σελίδες
+   + Universal font (Montserrat) ΑΠΟ: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+   + alternative fonts αν ο χρήστης δέν έχει σύνδεση στο internet */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, Verdana, sans-serif;
+}
+
+
+/*  smooth scroll behavior που θα χρησιμοποιηθεί για smooth transition απο <a> links σε <sections>*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Background Image + Image Scaling */
+body{
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+     /*    Navigation + Header     */
+
+/* Βασικό στυλ για το navigation bar */
+/* Σωστή θέση για τα navigation tags και header tags στην ιστοσελίδα */
+/* Ενω χρησιμοποιείται η background image ως transparent background για το navigation bar με μικρό box shadow (Μονο για την αρχική σελίδα) 
+   Διοτι μόνο η Αρχική σελίδα έχει background image*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+/* container για το navigation bar */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 32px;
+    max-width: 1600px;
+}
+
+/* logo της εταιρείας μέσα στο navigation bar */
+.navbar-logo {
+    font-size: 48px;
+    font-weight: bold;
+    color: #395d83;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* menu του navigation bar */
+.navbar-container .navbar-menu{
+    display: flex;
+    text-align: center;
+    gap: 24px;
+    list-style-type: none;
+}
+
+/* Στύλ για τα links του menu */
+.navbar-container .navbar-menu li a {
+    text-decoration: none;
+    color: #395d83;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.6s ease;
+    white-space: nowrap;
+}
+
+/* Στύλ για τα links του menu όταν ο χρήστης περνά το ποντίκι πάνω από το link και το link είναι active */
+.navbar-container .navbar-menu li a:hover, 
+.navbar-container .navbar-menu li a.active-page{
+    color: #34495e;
+    background: rgba(146, 185, 212, 0.8);
+    border: 2px solid #34495e;
+}
+
+/* Στύλ για το toggle button του menu (Οταν ειναι toggled το menu εμφανίζεται)
+   Σε αυτό το στοιχείο ενεργεί το .js script για το toggle menu*/
+.navbar-toggle{
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Στύλ για τα 3 Span lines του menu */
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #34495e;
+    transition: all 0.4s ease-in-out;
+}
+
+      /*      Footer      */
+
+/* Footer , display flex και wrap για το footer ωστε να είναι responsive*/
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color: rgb(247, 247, 247); /* rgb(199, 199, 199, 0.9)*/
+    box-shadow: 0 4px 8px 8px rgba(56, 56, 56, 0.4);
+    padding: 30px 10%;
+}
+
+footer ul{
+    list-style: none;
+}
+
+/* Αλλάζει το πλάτος των στηλών του footer*/
+.footer-column{
+    width: 25%;
+}
+
+/* Στύλ για τους τίτλους των στηλών του footer */
+.footer-column h4{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(25, 17, 133); 
+    text-transform: capitalize;
+}
+
+/* Κενό ανάμεσα στα links του footer */
+ul li{
+    margin-bottom: 8px;
+}
+
+/* Στύλ για τα links του footer */
+ul li a{
+    display: block;
+    font-size: 19px;
+    text-transform: capitalize;
+    color: #0e1079;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+/* οταν ο χρήστης περνά το ποντίκι πάνω από το link του footer αλλάζει το χρώμα του link 
+   και αυξάνει το padding αριστερά για περισσοτερη ευκρίνεια το πού ειναι το ποντίκι  */
+ul li a:hover{
+    color: rgb(139, 152, 204);
+    padding-left: 8px;
+}
+
+         /*         Responsive Style + Mobile Navigation Accessebility        */
+
+/*  Χρησιμοποιείται media Query, Οταν το πλάτος της οθόνης είναι μικρότερο από 1150 pixels */
+/*  Αλλάζει το background filter του navigation bar και το display του menu σε none */
+/*  ολες οι αλλαγες γίνονται για το mobile menu */
+/*  Σώστο Functionality Και αλλάγη navigation bar links σε column */
+@media (max-width: 1150px) {
+    .navbar{
+        backdrop-filter: none;
+    }
+
+    .navbar-container .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 27px !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 80px 24px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-container .navbar-menu.active{
+        display: flex;
+    }
+
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .footer-column{
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center;;
+    }
+
+    .recommended-properties h2{
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    
+}
+
+/* Media Query για το mobile menu με μικρότεσ οθόνες (Κάτω απο 600 pixels)*/
+/* Χώρίς 2ο media query το mobile menu δεν θα ειναι responsive για όλες τις οθόνες*/
+/* Πριν ήταν 1150 pixels αλλά τώρα είναι 600 pixels και κάνονται μόνο μικρές αλλαγές */
+/* Αλλάζοντας το πλάτος του container και το font size του logo*/
+@media (max-width: 600px) {
+    .navbar-container {
+        padding: 0 16px;
+    }
+
+    .navbar-logo {
+        font-size: 27px;
+    }
+
+    .navbar-container .navbar-menu li a{
+        font-size: 19px;
+        padding: 3px 15px;
+    }
+
+    .footer-column{
+        width: 100%;
+    }
+
+    .recommended-properties h2{
+        font-size: 20px;
+        font-weight: 200;
+    }
+}

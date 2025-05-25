@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<!-- 
+    ============================================================================
+    Υπηρεσίες - Real Estate Website (Teralith)
+    ============================================================================
+    
+    Αυτή είναι η σελίδα "Υπηρεσίες" του Teralith Project.
+    Παρουσιάζει τις υπηρεσίες που προσφέρει η εταιρεία
+    και τα πακέτα τιμών για κάθε υπηρεσία.
+-->
+
+<html lang="el">
+
+    <head>
+        <!-- 
+            Meta tags για σωστή εμφάνιση και SEO
+            Χρήση UTF-8 για σωστή εμφάνιση ελληνικών χαρακτήρων
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teralith - Υπηρεσίες</title>
+        
+        <!--  Εξωτερικά CSS αρχεία
+            styles.css: Βασικά στυλ για ολες τις σελίδες.
+            navigation.css: Ολα τα βασικα στυλ για Headers/Navigation/Logo/Footer και μερικά εξτρά όπως Universal selectors (*). -->
+        <link rel="stylesheet" href="../CSS/navigation.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+    
+        <!-- EMBEDED CODE FROM GOOGLE FONTS https://fonts.google.com/selection/embed
+            Google Fonts: Εισαγωγή της γραμματοσειράς Montserrat με διαφορετικά βάρη (Weight:).
+            Χρησιμοποιείται για την τυπογραφία ολόκληρης της ιστοσελίδας .
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            
+        <!-- 
+            Font Awesome CDN: Βιβλιοθήκη εικονιδίων για την ιστοσελίδα.
+            Χρησιμοποιείται για τα εικονίδια επικοινωνίας, πλοήγησης και για Mobile menu.
+        -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+        <!-- Internal CSS Για την σελίδα υπηρεσιών -->
+        <style>
+
+            /* Hero section για την σελίδα υπηρεσιών
+               Αλλάζει το Background Image μαζι με linear gradient για να είναι πιο ορατό και ελκυστικό. με λιγο opacity για να ειναι πιο "transparent" 
+               το Κεντραρει και βαζει padding και margin και το text στο κεντρο*/
+            .services-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../IMAGES/background_2.jpg');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                text-align: center;
+                padding: 64px 32px;
+                margin-bottom: 48px;
+            }
+
+            /* Επιπλέον στυλ για το text της hero section*/
+            .services-hero h1 {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            /* Grid για τα cards των υπηρεσιών*/
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px
+                ;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 32px;
+            }
+
+            /* Στυλ για τα cards των υπηρεσιών
+               Με box shadow για να φαίνεται η Καρτά(card) γιατί το background είναι λευκό και η κάρτα ειναι επίσης λευκή ΄*/
+            .service-card {
+                background: white;
+                padding: 32px;
+                border-radius: 8px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                transition: transform 0.3s;
+            }
+
+            /* Οσο το ποντικι κανει Hover πάνω σε κάρτα αλλάζει το transform κατα 5 pixel προς τα πάνω 
+               Δηλαδή στον ΄΄αξονα (Y) και οταν αφηνει το ποντικι το card επανερχεται στην αρχικη του θεση*/
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Στυλ για τα εικονίδια των υπηρεσιών*/
+            .service-card i {
+                font-size: 32px;
+                color: rgb(18, 18, 88);
+                margin-bottom: 16px;
+            }
+
+            /* Στυλ για το text (h3) των Καρτών των υπηρεσιών*/
+            .service-card h3 {
+                color: rgb(18, 18, 88);
+                margin-bottom: 16px;
+            }
+
+            /* Στυλ για τις παραγραφους (p) των Καρτών των υπηρεσιών*/
+            .service-card p {
+                color: #666;
+                line-height: 1.6;
+            }
+
+            /* section στύλ για τον πίνακα με τα πακέτα υπηρεσιών*/
+            .pricing-section {
+                background-color: #f8f9fa;
+                padding: 64px 32px;
+            }
+
+            /* container για τον πίνακα με τα πακέτα υπηρεσιών
+               1200 pixel "max" width και margin 0 auto για να είναι στο κεντρο*/
+            .pricing-container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            /* table στύλ για τον πίνακα με τα πακέτα υπηρεσιών 
+               border-collapse: collapse για να είναι συνεχόμενοι οι πίνακες
+               overflow: hiden για να μην εμφανιζονται οι πίνακες οταν το ποντικι είναι πάνω απο τον πίνακα*/
+            .pricing-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 32px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            /* table header και table data στύλ για τον πίνακα με τα πακέτα υπηρεσιών 
+            */
+            .pricing-table th,
+            .pricing-table td {
+                padding: 16px;
+                text-align: left;
+                border-bottom: 1px solid #eee;
+            }
+
+            /* table header στύλ για τον πίνακα με τα πακέτα υπηρεσιών  
+               Γίνεται Μπλέ με ασπρο text*/
+            .pricing-table th {
+                background-color: rgb(18, 18, 88);
+                color: white;
+            }
+
+            /* table row στύλ για τον πίνακα με τα πακέτα υπηρεσιών  */
+            .pricing-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            /* οταν το ποντικι είναι πάνω απο τον πίνακα αλλάζει το background color σε πιο σκουρο
+            ώστε να φαίνεται η γραμμη που είναι πάνω απο τον πίνακα*/
+            .pricing-table tr:hover {
+                background-color: #e0e0e0;
+            }
+ 
+            /* section στύλ για τις επιπλέον υπηρεσίες*/
+            .additional-services {
+                padding: 64px 32px;
+                max-width: 1200px;
+                margin: 0 auto; 
+                background-color: #f8f9fa;
+            }
+
+            /* text στύλ για το header της section των επιπλέον υπηρεσιών */
+            .additional-services h2 {
+                color: rgb(18, 18, 88);
+                margin-bottom: 32px;
+                text-align: center;
+                font-size: 32px;
+            }
+
+
+            .services-grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+
+            .service-item {
+                background: white;
+                padding: 32px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+            }
+
+            .service-item:hover {
+                transform: translateY(-5px);
+            }
+
+            .service-item h3 {
+                color: rgb(18, 18, 88);
+                margin-bottom: 16px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .service-item h3 i {
+                font-size: 1.5rem;
+            }
+
+            .service-item p {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+
+            .service-features {
+                list-style: none;
+                padding: 0;
+                margin-top: 16px;
+            }
+
+            .service-features li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
+                color: #666;
+            }
+
+            .service-features li i {
+                color: rgb(18, 18, 88);
+                font-size: 14px;
+            }
+
+            /* Media Queries για την σελίδα υπηρεσιών 
+               προσφέρει προσβασιμότητα για mobile devices και συσκευές με μικρότερο πλάτος από 768px 
+               Και αλλαζει το grid layout σε single column για καλύτερη προσβασιμότητα. και μερικά ακόμα optimizations στην οθ΄όνη */
+            @media screen and (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .pricing-table {
+                    display: block;
+                    overflow-x: auto;
+                }
+
+                .services-grid-2 {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+
+    <!-- Main content της σελίδας υπηρεσιών-->
+    <body class="home-page">
+
+        <!-- Navigation Bar (το ιδιο Nagivation υπαρχει σε όλες τις σελίδες) για seemless transition μεταξύ των σελίδων-->
+        <div id="index">
+            <nav class="navbar">
+
+                <!-- Navigation div container που περιέχει το Logo και τα links του navigation bar-->
+                <div class="navbar-container">
+
+                    <!-- Logo Εταιρείας με link προς την αρχική σελίδα-->
+                    <a href="index.html" class="navbar-logo">Teralith</a> 
+
+                    <!-- Button για το dropdown menu στο mobile device-->
+                    <button class="navbar-toggle">
+                        <!-- 3 lines για το dropdown menu-->
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+
+                    <!-- unordered list που περιέχει όλα τα links του navigation bar και το active page που αλλάζει χρώμα όταν είστε σε μια σελίδα
+                         Ωστε να διαφέρει απο τα αλλα links ανάλογα με την σελίδα που είστε. -->
+                    <ul class="navbar-menu">
+                        <li><a href="index.html">Αρχική</a></li>
+                        <li><a href="properties.html">Ακίνητα</a></li>
+                        <li><a href="services.html" class="active-page">Υπηρεσίες</a></li>
+                        <li><a href="about.html">Σχετικά με εμάς</a></li>
+                        <li><a href="contact.html">Επικοινωνία</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main content της σελίδας υπηρεσιών-->
+        <main id="main-content">
+
+            <!-- Hero Section για την σελίδα υπηρεσιών που περιεχει και το background image της σελίδας-->
+            <section class="services-hero">
+                <h1>Οι Υπηρεσίες μας</h1>
+                <p>Εξειδικευμένες λύσεις για κάθε ανάγκη σας στον τομέα των ακινήτων</p>
+            </section>
+
+            <!-- Βασικές υπηρεσίες που προσφέρει η εταιρεία- με cards για καλύτερη παρουσίαση και εύκολη προσβασιμότητα -->
+            <section class="services-grid">
+
+                <!-- Card για την υπηρεσία αγοράς ακινήτων-->
+                <div class="service-card">
+
+                    <i class="fas fa-home"></i> <!-- Εικονίδιο για την υπηρεσία αγοράς ακινήτων-->
+                    <h3>Αγορά Ακινήτων</h3>
+                    <p>Βοηθάμε στην εύρεση του ιδανικού σπιτιού για εσάς, με προσεκτική επιλογή και επαγγελματική συμβουλευτική.</p>
+                </div>
+
+                <!-- Card για την υπηρεσία πώλησης ακινήτων-->
+                <div class="service-card">
+                    <i class="fas fa-key"></i> <!-- Εικονίδιο για την υπηρεσία πώλησης ακινήτων-->
+                    <h3>Πώληση Ακινήτων</h3>
+                    <p>Διαχειριζόμαστε την πώληση του ακινήτου σας με επαγγελματισμό και αποτελεσματικότητα.</p>
+                </div>
+
+                <!-- Card για την υπηρεσία διαχείρησης ακινήτων-->
+                <div class="service-card">
+                    <i class="fas fa-building"></i> <!-- Εικονίδιο για την υπηρεσία διαχείρησης ακινήτων-->
+                    <h3>Διαχείριση Ακινήτων</h3>
+                    <p>Προσφέρουμε ολοκληρωμένες υπηρεσίες διαχείρισης για επενδυτικά ακίνητα.</p>
+                </div>
+            </section>
+
+            <!-- Πινακας με τα πακέτα υπηρεσιών που προσφέρει η εταιρεία-->
+            <section class="pricing-section">
+                <div class="pricing-container">
+                    <h2>Πακέτα Υπηρεσιών</h2>
+
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Υπηρεσία</th>
+                                <th>Περιγραφή</th>
+                                <th>Διάρκεια</th>
+                                <th>Τιμή</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Πώληση Ακινήτου</td>
+                                <td>Πλήρης διαχείριση πώλησης</td>
+                                <td>Μέχρι την πώληση</td>
+                                <td>2% της τιμής πώλησης</td>
+                            </tr>
+                            <tr>
+                                <td>Αξιολόγηση Ακινήτου</td>
+                                <td>Επισκόπηση και εκτίμηση αξίας</td>
+                                <td>2-3 ημέρες</td>
+                                <td>150€</td>
+                            </tr>
+                            <tr>
+                                <td>Διαχείριση Ενοικίασης</td>
+                                <td>Πλήρης διαχείριση ενοικίου</td>
+                                <td>Μηνιαία</td>
+                                <td>5% του ενοικίου</td>
+                            </tr>
+                            <tr>
+                                <td>Συμβουλευτική</td>
+                                <td>Επενδυτική συμβουλευτική</td>
+                                <td>Μία ώρα</td>
+                                <td>80€</td>
+                            </tr>
+                            <tr>
+                                <td>Νομική Υποστήριξη</td>
+                                <td>Συμβολαιογραφική υποστήριξη</td>
+                                <td>Ανά περίπτωση</td>
+                                <td>Από 200€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Επιπλέον υπηρεσίες που προσφέρει η εταιρεία μαζι με εικονίδια για καλύτερη παρουσίαση-->
+            <section class="additional-services">
+                <h2>Επιπλέον Υπηρεσίες</h2>
+
+                <!-- Grid για τις επιπλέον υπηρεσίες-->
+                <div class="services-grid-2">
+
+                    <!-- Card για την υπηρεσία ανακαίνισης και σχεδιασμού-->
+                    <div class="service-item">
+                        <h3><i class="fas fa-paint-roller"></i>Ανακαίνιση και Σχεδιασμός</h3>
+                        <p>Προσφέρουμε ολοκληρωμένες υπηρεσίες ανακαίνισης και σχεδιασμού για το σπίτι των ονείρων σας.</p>
+
+                        <ul class="service-features">
+                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
+                            <li><i class="fas fa-check"></i>Σχεδιασμός εσωτερικών χώρων</li>
+                            <li><i class="fas fa-check"></i>Ανακαίνιση κουζίνας και μπάνιου</li>
+                            <li><i class="fas fa-check"></i>Επισκευές και βελτιώσεις</li>
+                            <li><i class="fas fa-check"></i>Συνεργασία με έμπειρους τεχνικούς</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card για την υπηρεσία ασφαλείας ακινήτων-->
+                    <div class="service-item">
+                        <h3><i class="fas fa-shield-alt"></i>Ασφάλεια Ακινήτων</h3>
+                        <p>Προστατέψτε το ακίνητό σας με τις καλύτερες λύσεις ασφαλείας της αγοράς.</p>
+
+                        <ul class="service-features">
+                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
+                            <li><i class="fas fa-check"></i>Συστήματα συναγερμού</li>
+                            <li><i class="fas fa-check"></i>Κλειδαριές υψηλής ασφαλείας</li>
+                            <li><i class="fas fa-check"></i>Καμερές παρακολούθησης</li>
+                            <li><i class="fas fa-check"></i>Ασφαλιστικά πακέτα</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card για την υπηρεσία φωτογράφησης ακινήτων-->
+                    <div class="service-item">
+                        <h3><i class="fas fa-camera"></i>Φωτογράφηση Ακινήτων</h3>
+                        <p>Επαγγελματική φωτογράφηση για την καλύτερη παρουσίαση του ακινήτου σας.</p>
+
+                        <ul class="service-features">
+                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
+                            <li><i class="fas fa-check"></i>Φωτογράφηση εσωτερικών χώρων</li>
+                            <li><i class="fas fa-check"></i>360° εικονικές περιηγήσεις</li>
+                            <li><i class="fas fa-check"></i>Βίντεο παρουσίαση</li>
+                            <li><i class="fas fa-check"></i>Επεξεργασία εικόνας</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card για την υπηρεσία μελετών επενδύσεων-->
+                    <div class="service-item">
+                        <h3><i class="fas fa-chart-line"></i>Μελέτες Επενδύσεων</h3>
+                        <p>Συμβουλευτική και ανάλυση για σοφές επενδύσεις στον τομέα των ακινήτων.</p>
+
+                        <ul class="service-features">
+                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
+                            <li><i class="fas fa-check"></i>Ανάλυση αγοράς</li>
+                            <li><i class="fas fa-check"></i>Υπολογισμός επενδυτικής απόδοσης</li>
+                            <li><i class="fas fa-check"></i>Στρατηγικός σχεδιασμός</li>
+                            <li><i class="fas fa-check"></i>Νομική υποστήριξη</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer που μπαίνει στο τέλος όλων των σελίδων και περιέχει τα links για την επικοινωνία και τα links για τις σελίδες του ιστοτόπου-->
+        <footer>
+
+            <!-- footer container 1 που υπάρχει σε όλες τις σελίδες -->
+            <div class="footer-column">
+                <h4>Επικοινωνία</h4>
+                <ul>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-map-marker-alt"></i> Λεωφ. Καραμαλή 123, Λάρισα</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-phone"></i> 249 5054567</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-envelope"></i> info@teralith.gr</p></li>
+                </ul>
+            </div>
+
+            <!-- footer container 2 που υπάρχει σε όλες τις σελίδες -->
+            <div class="footer-column">
+                <h4>Γρήγοροι Σύνδεσμοι</h4>
+                <ul>
+                    <li><a href="index.html">Αρχική</a></li>
+                    <li><a href="properties.html">Ακίνητα</a></li>
+                    <li><a href="services.html">Υπηρεσίες</a></li>
+                    <li><a href="about.html">Σχετικά</a></li>
+                    <li><a href="contact.html">Επικοινωνία</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- footer container 3 που υπάρχει σε όλες τις σελίδες -->
+            <div class="footer-column">
+                <h4>Ακολουθήστε μας</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- External JavaScript που αλλάζει το icon του dropdown menu ανάλογα με την κατάσταση του menu (Η "X" ή το "3 lines" span)
+             Υπάρχει σε όλες τις σελίδες και είναι το ίδιο script μαζι με το Navigation bar της σελίδας. -->
+        <script src="../JAVASCRIPT/dropdown.js"></script>
+
+    </body>
+</html> 

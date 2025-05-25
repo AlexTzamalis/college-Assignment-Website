@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<!-- 
+    ============================================================================
+    FAQ - Real Estate Website (Teralith)
+    ============================================================================
+    
+    Αυτή είναι η σελίδα "FAQ" του Teralith Project.
+    Παρουσιάζει τις υπηρεσίες που προσφέρει η εταιρεία
+    και τα πακέτα τιμών για κάθε υπηρεσία.
+-->
+
+<html lang="el">
+
+    <head>
+        <!-- 
+            Meta tags για σωστή εμφάνιση και SEO
+            Χρήση UTF-8 για σωστή εμφάνιση ελληνικών χαρακτήρων
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teralith - FAQ</title>
+        
+        <!--  Εξωτερικά CSS αρχεία
+            styles.css: Βασικά στυλ για ολες τις σελίδες.
+            navigation.css: Ολα τα βασικα στυλ για Headers/Navigation/Logo/Footer και μερικά εξτρά όπως Universal selectors (*). -->
+        <link rel="stylesheet" href="../CSS/navigation.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+    
+        <!-- EMBEDED CODE FROM GOOGLE FONTS https://fonts.google.com/selection/embed
+            Google Fonts: Εισαγωγή της γραμματοσειράς Montserrat με διαφορετικά βάρη (Weight:).
+            Χρησιμοποιείται για την τυπογραφία ολόκληρης της ιστοσελίδας .
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            
+        <!-- 
+            Font Awesome CDN: Βιβλιοθήκη εικονιδίων για την ιστοσελίδα.
+            Χρησιμοποιείται για τα εικονίδια επικοινωνίας, πλοήγησης και για Mobile menu.
+        -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <!-- Internal CSS Για την σελίδα FAQ -->
+        <style>
+            .faq-container {
+                max-width: 1200px;
+                margin: 50px auto;
+                padding: 0 20px;
+            }
+
+            .faq-title {
+                text-align: center;
+                color: #395d83;
+                font-size: 2.5em;
+                margin-bottom: 40px;
+            }
+
+            .faq-section {
+                margin-bottom: 30px;
+            }
+
+            .faq-section h2 {
+                color: #34495e;
+                font-size: 1.8em;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #395d83;
+                padding-bottom: 10px;
+            }
+
+            .faq-item {
+                background: #f8f9fa;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+            }
+
+            .faq-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            }
+
+            .faq-question {
+                color: #395d83;
+                font-size: 1.2em;
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+            .faq-question i {
+                margin-right: 10px;
+                color: #34495e;
+            }
+
+            .faq-answer {
+                color: #2c3e50;
+                line-height: 1.6;
+                padding-left: 30px;
+            }
+
+            @media (max-width: 768px) {
+                .faq-title {
+                    font-size: 2em;
+                }
+
+                .faq-section h2 {
+                    font-size: 1.5em;
+                }
+
+                .faq-question {
+                    font-size: 1.1em;
+                }
+            }
+        </style>
+    </head>
+
+    <!-- Main content της σελίδας υπηρεσιών-->
+    <body class="home-page">
+
+        <!-- Navigation Bar (το ιδιο Nagivation υπαρχει σε όλες τις σελίδες) για seemless transition μεταξύ των σελίδων-->
+        <div id="index">
+            <nav class="navbar">
+
+                <!-- Navigation div container που περιέχει το Logo και τα links του navigation bar-->
+                <div class="navbar-container">
+
+                    <!-- Logo Εταιρείας με link προς την αρχική σελίδα-->
+                    <a href="index.html" class="navbar-logo">Teralith</a> 
+
+                    <!-- Button για το dropdown menu στο mobile device-->
+                    <button class="navbar-toggle">
+                        <!-- 3 lines για το dropdown menu-->
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+
+                    <!-- unordered list που περιέχει όλα τα links του navigation bar και το active page που αλλάζει χρώμα όταν είστε σε μια σελίδα
+                         Ωστε να διαφέρει απο τα αλλα links ανάλογα με την σελίδα που είστε. -->
+                    <ul class="navbar-menu">
+                        <li><a href="index.html">Αρχική</a></li>
+                        <li><a href="properties.html">Ακίνητα</a></li>
+                        <li><a href="services.html">Υπηρεσίες</a></li>
+                        <li><a href="about.html">Σχετικά με εμάς</a></li>
+                        <li><a href="contact.html">Επικοινωνία</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main content της σελίδας FAQ -->
+        <main id="main-content">
+            <div class="faq-container">
+                <h1 class="faq-title">Συχνές Ερωτήσεις</h1>
+
+                <div class="faq-section">
+                    <h2>Γενικές Ερωτήσεις</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Πώς μπορώ να βρω το κατάλληλο ακίνητο για εμένα;
+                        </div>
+                        <div class="faq-answer">
+                            Μπορείτε να εξερευνήσετε τα διαθέσιμα ακίνητα στην ενότητα "Ακίνητα" της ιστοσελίδας μας. Χρησιμοποιήστε τα φίλτρα αναζήτησης για να βρείτε ακίνητα που ανταποκρίνονται στις προτιμήσεις σας. Επίσης, μπορείτε να επικοινωνήσετε μαζί μας για προσωποποιημένη βοήθεια.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Ποια είναι τα απαραίτητα έγγραφα για την αγορά ακινήτου;
+                        </div>
+                        <div class="faq-answer">
+                            Τα βασικά έγγραφα που χρειάζεστε είναι: ταυτότητα ή διαβατήριο, ΑΦΜ, αποδεικτικό εισοδήματος, πιστοποιητικό οικογενειακής κατάστασης και πιστοποιητικό μη ύπαρξης υποθήκης. Η Teralith θα σας βοηθήσει με τη συλλογή και την επεξεργασία όλων των απαραίτητων εγγράφων.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Οικονομικά</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Πώς υπολογίζεται η αξία ενός ακινήτου;
+                        </div>
+                        <div class="faq-answer">
+                            Η αξία ενός ακινήτου καθορίζεται από διάφορους παράγοντες όπως η τοποθεσία, το μέγεθος, η κατάσταση, οι εγκαταστάσεις και οι τρέχουσες συνθήκες της αγοράς. Η Teralith διεξάγει πλήρη εκτίμηση λαμβάνοντας υπόψη όλους αυτούς τους παράγοντες.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Ποια είναι τα έξοδα που περιλαμβάνονται στην αγορά ακινήτου;
+                        </div>
+                        <div class="faq-answer">
+                            Τα βασικά έξοδα περιλαμβάνουν: το κόστος του ακινήτου, τα έξοδα συμβολαιογράφου, το ΦΠΑ (όπου ισχύει), τα έξοδα μεταβίβασης, τα έξοδα τραπεζικού δανείου (αν χρειάζεται) και τα έξοδα εκτιμητή. Η Teralith παρέχει λεπτομερή ανάλυση όλων των εξόδων πριν από την ολοκλήρωση της συναλλαγής.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Υπηρεσίες</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Πόσο χρόνο παίρνει η διαδικασία αγοράς/πώλησης ακινήτου;
+                        </div>
+                        <div class="faq-answer">
+                            Η διάρκεια της διαδικασίας εξαρτάται από διάφορους παράγοντες όπως η πολυπλοκότητα της συναλλαγής, η διαθεσιμότητα των απαραίτητων εγγράφων και η ταχύτητα επεξεργασίας από τις αρχές. Σε γενικές γραμμές, η διαδικασία μπορεί να ολοκληρωθεί σε 1-3 μήνες.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            Πώς μπορώ να πουλήσω το ακίνητό μου μέσω της Teralith;
+                        </div>
+                        <div class="faq-answer">
+                            Η διαδικασία πώλησης ξεκινά με μια πρώτη συνάντηση για εκτίμηση του ακινήτου. Στη συνέχεια, συμφωνούμε τη στρατηγική προώθησης, φωτογραφίζουμε το ακίνητο, δημιουργούμε την αγγελία και προχωράμε στην προβολή του. Η Teralith αναλαμβάνει όλη τη διαδικασία από την αρχή μέχρι το τέλος.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer που μπαίνει στο τέλος όλων των σελίδων και περιέχει τα links για την επικοινωνία και τα links για τις σελίδες του ιστοτόπου-->
+        <footer>
+
+            <!-- footer container 1 που υπάρχει σε όλες τις σελίδες -->
+            <div class="footer-column">
+                <h4>Επικοινωνία</h4>
+                <ul>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-map-marker-alt"></i> Λεωφ. Καραμαλή 123, Λάρισα</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-phone"></i> 249 5054567</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-envelope"></i> info@teralith.gr</p></li>
+                </ul>
+            </div>
+
+            <!-- footer container 2 που υπάρχει σε όλες τις σελίδες -->
+            <div class="footer-column">
+                <h4>Γρήγοροι Σύνδεσμοι</h4>
+                <ul>
+                    <li><a href="index.html">Αρχική</a></li>
+                    <li><a href="properties.html">Ακίνητα</a></li>
+                    <li><a href="services.html">Υπηρεσίες</a></li>
+                    <li><a href="about.html">Σχετικά</a></li>
+                    <li><a href="contact.html">Επικοινωνία</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- footer container 3 που υπάρχει σε όλες τις σελίδες -->
+            <div class="footer-column">
+                <h4>Ακολουθήστε μας</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- External JavaScript που αλλάζει το icon του dropdown menu ανάλογα με την κατάσταση του menu (Η "X" ή το "3 lines" span)
+             Υπάρχει σε όλες τις σελίδες και είναι το ίδιο script μαζι με το Navigation bar της σελίδας. -->
+        <script src="../JAVASCRIPT/dropdown.js"></script>
+
+    </body>
+</html> 

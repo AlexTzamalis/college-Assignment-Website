@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<!-- 
+    ============================================================================
+    Properties/Ακίνήτα - Real Estate Website (Teralith)
+    ============================================================================
+-->
+
+<html lang="el">
+
+    <head>
+        <!-- 
+            Meta tags για σωστή εμφάνιση και SEO
+            Χρήση UTF-8 για σωστή εμφάνιση ελληνικών χαρακτήρων
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Teralith - Ακίνητα	</title>
+        
+        <!--  Εξωτερικά CSS αρχεία
+            styles.css: Βασικά στυλ για ολες τις σελίδες.
+            navigation.css: Ολα τα βασικα στυλ για Headers/Navigation/Logo/Footer και μερικά εξτρά όπως Universal selectors (*). -->
+        <link rel="stylesheet" href="../CSS/navigation.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+    
+        <!-- EMBEDED CODE FROM GOOGLE FONTS https://fonts.google.com/selection/embed
+            Google Fonts: Εισαγωγή της γραμματοσειράς Montserrat με διαφορετικά βάρη (Weight:).
+            Χρησιμοποιείται για την τυπογραφία ολόκληρης της ιστοσελίδας .
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            
+        <!-- 
+            Font Awesome CDN: Βιβλιοθήκη εικονιδίων για την ιστοσελίδα.
+            Χρησιμοποιείται για τα εικονίδια επικοινωνίας, πλοήγησης και για Mobile menu.
+        -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <style>
+
+            /* Search bar styling */
+            .search-container {
+                max-width: 800px;
+                margin: 32px auto;
+                padding: 16px;
+                background: rgba(224, 224, 224, 0.5);
+                border-radius: 8px;
+                box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+            }
+
+            .search-form {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .search-input {
+                flex: 1;
+                min-width: 200px;
+                padding: 13px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+
+            .search-button {
+                padding: 13px 24px;
+                background-color: rgb(18, 18, 88);
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .search-button:hover {
+                background-color: rgb(46, 46, 173);
+            }
+
+            /* Properties grid styling */
+            .properties-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+                padding: 32px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .property-card {
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                width: 100%;
+            }
+
+            .property-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .property-btn {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: #1260b4;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .property-btn:hover {
+                background-color: #0056b3;
+            }
+
+            /* Responsive grid adjustments */
+            @media screen and (max-width: 1200px) {
+                .properties-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    padding: 24px;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .properties-grid {
+                    grid-template-columns: 1fr;
+                    padding: 16px;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="home-page">
+
+    
+        <!-- Navigation Bar (το ιδιο Nagivation υπαρχει σε όλες τις σελίδες) για seemless transition μεταξύ των σελίδων-->
+        <div id="index">
+            <nav class="navbar">
+
+                <!-- Navigation div container που περιέχει το Logo και τα links του navigation bar-->
+                <div class="navbar-container">
+
+                    <!-- Logo Εταιρείας με link προς την αρχική σελίδα-->
+                    <a href="index.html" class="navbar-logo">Teralith</a> 
+
+                    <!-- Button για το dropdown menu στο mobile device-->
+                    <button class="navbar-toggle">
+                        <!-- 3 lines για το dropdown menu-->
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+
+                    <!-- unordered list που περιέχει όλα τα links του navigation bar και το active page που αλλάζει χρώμα όταν είστε σε μια σελίδα
+                         Ωστε να διαφέρει απο τα αλλα links ανάλογα με την σελίδα που είστε. -->
+                    <ul class="navbar-menu">
+                        <li><a href="index.html">Αρχική</a></li>
+                        <li><a href="properties.html" class="active-page">Ακίνητα</a></li>
+                        <li><a href="services.html">Υπηρεσίες</a></li>
+                        <li><a href="about.html">Σχετικά με εμάς</a></li>
+                        <li><a href="contact.html">Επικοινωνία</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <main id="main-content">
+            <!-- Search Section -->
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="Αναζήτηση ακινήτου...">
+                    <select class="search-input">
+                        <option value="">Τύπος ακινήτου</option>
+                        <option value="apartment">Διαμέρισμα</option>
+                        <option value="house">Μονοκατοικία</option>
+                        <option value="villa">Βίλα</option>
+                    </select>
+                    <select class="search-input">
+                        <option value="">Τιμή</option>
+                        <option value="0-100000">0 - 100.000€</option>
+                        <option value="100000-300000">100.000€ - 300.000€</option>
+                        <option value="300000+">300.000€+</option>
+                    </select>
+                    <button type="submit" class="search-button">Αναζήτηση</button>
+                </form>
+            </div>
+
+            <!-- Properties Grid -->
+            <div class="properties-grid">
+                <!-- Property Card 1 -->
+                <div class="property-card">
+                    <img src="../IMAGES/apartment_1.jpg" alt="Πολυτελές διαμέρισμα στο Κολωνάκι" class="property-image">
+                    <div class="property-details">
+                        <h3>Πολυτελές Διαμέρισμα</h3>
+                        <p class="property-price">550.000€</p>
+                        <div class="property-features">
+                            <span class="feature">120τ.μ.</span>
+                            <span class="feature">3 υπνοδωμάτια</span>
+                            <span class="feature">2 μπάνια</span>
+                            <span class="feature">Πάρκινγκ</span>
+                        </div>
+                        <p class="property-description">Πολυτελές διαμέρισμα στο ιστορικό Κολωνάκι, με θέα στην Ακρόπολη.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Κολωνάκι</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card">
+                    <img src="../IMAGES/villa_1.jpg" alt="Πολυτελής βίλα στη Βουλιαγμένη" class="property-image">
+                    <div class="property-details">
+                        <h3>Πολυτελής Βίλα</h3>
+                        <p class="property-price">1.200.000€</p>
+                        <div class="property-features">
+                            <span class="feature">350τ.μ.</span>
+                            <span class="feature">5 υπνοδωμάτια</span>
+                            <span class="feature">4 μπάνια</span>
+                            <span class="feature">Πισίνα</span>
+                        </div>
+                        <p class="property-description">Πολυτελής βίλα με ιδιωτική πισίνα και θέα στη θάλασσα.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Βουλιαγμένη</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card">
+                    <img src="../IMAGES/house_1.jpg" alt="Μονοκατοικία στο Διόνυσο" class="property-image">
+                    <div class="property-details">
+                        <h3>Μονοκατοικία με Κήπο</h3>
+                        <p class="property-price">750.000€</p>
+                        <div class="property-features">
+                            <span class="feature">280τ.μ.</span>
+                            <span class="feature">4 υπνοδωμάτια</span>
+                            <span class="feature">3 μπάνια</span>
+                            <span class="feature">Κήπος</span>
+                        </div>
+                        <p class="property-description">Μονοκατοικία με μεγάλο κήπο και θέα στο Πάρνηθα.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Διόνυσο</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="property-card">
+                    <img src="../IMAGES/apartment_3.jpg" alt="Νεόδμητο διαμέρισμα στο Χαλάνδρι" class="property-image">
+                    <div class="property-details">
+                        <h3>Νεόδμητο Studio</h3>
+                        <p class="property-price">180.000€</p>
+                        <div class="property-features">
+                            <span class="feature">45τ.μ.</span>
+                            <span class="feature">1 υπνοδωμάτιο</span>
+                            <span class="feature">1 μπάνιο</span>
+                            <span class="feature">Μπαλκόνι</span>
+                        </div>
+                        <p class="property-description">Νεόδμητο studio ιδανικό για επενδυτές ή νέους επαγγελματίες.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Χαλάνδρι</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="property-card">
+                    <img src="../IMAGES/villa_2.jpg" alt="Βίλα στο Παλαιό Φάληρο" class="property-image">
+                    <div class="property-details">
+                        <h3>Μονοκατοικία με Θέα</h3>
+                        <p class="property-price">680.000€</p>
+                        <div class="property-features">
+                            <span class="feature">200τ.μ.</span>
+                            <span class="feature">4 υπνοδωμάτια</span>
+                            <span class="feature">3 μπάνια</span>
+                            <span class="feature">Τεράστια</span>
+                        </div>
+                        <p class="property-description">Μονοκατοικία με θέα στη θάλασσα και μεγάλη βεράντα.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Παλαιό Φάληρο</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="property-card">
+                    <img src="../IMAGES/apartment_4.jpg" alt="Διαμέρισμα στο Ψυχικό" class="property-image">
+                    <div class="property-details">
+                        <h3>Διαμέρισμα με Κήπο</h3>
+                        <p class="property-price">420.000€</p>
+                        <div class="property-features">
+                            <span class="feature">110τ.μ.</span>
+                            <span class="feature">3 υπνοδωμάτια</span>
+                            <span class="feature">2 μπάνια</span>
+                            <span class="feature">Κήπος</span>
+                        </div>
+                        <p class="property-description">Διαμέρισμα με ιδιωτικό κήπο και υπόγειο χώρο στάθμευσης.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ψυχικό</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 7 -->
+                <div class="property-card">
+                    <img src="../IMAGES/villa_3.jpg" alt="Πολυτελής βίλα στο Κηφισιά" class="property-image">
+                    <div class="property-details">
+                        <h3>Πολυτελής Βίλα με Θέα</h3>
+                        <p class="property-price">2.500.000€</p>
+                        <div class="property-features">
+                            <span class="feature">450τ.μ.</span>
+                            <span class="feature">6 υπνοδωμάτια</span>
+                            <span class="feature">5 μπάνια</span>
+                            <span class="feature">Σπα</span>
+                        </div>
+                        <p class="property-description">Πολυτελής βίλα με ιδιωτικό σπα, γυμναστήριο και θέα στην Αθήνα.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Κηφισιά</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 8 -->
+                <div class="property-card">
+                    <img src="../IMAGES/apartment_5.jpg" alt="Πεντάδυμα στο Μαρούσι" class="property-image">
+                    <div class="property-details">
+                        <h3>Πεντάδυμα Διαμέρισμα</h3>
+                        <p class="property-price">950.000€</p>
+                        <div class="property-features">
+                            <span class="feature">180τ.μ.</span>
+                            <span class="feature">5 υπνοδωμάτια</span>
+                            <span class="feature">3 μπάνια</span>
+                            <span class="feature">Τέρρα</span>
+                        </div>
+                        <p class="property-description">Πεντάδυμα διαμέρισμα με μεγάλη τέρρα και θέα στο βουνό.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Μαρούσι</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 9 -->
+                <div class="property-card">
+                    <img src="../IMAGES/house_2.jpg" alt="Μονοκατοικία στο Γέρακα" class="property-image">
+                    <div class="property-details">
+                        <h3>Μονοκατοικία με Πισίνα</h3>
+                        <p class="property-price">1.800.000€</p>
+                        <div class="property-features">
+                            <span class="feature">320τ.μ.</span>
+                            <span class="feature">5 υπνοδωμάτια</span>
+                            <span class="feature">4 μπάνια</span>
+                            <span class="feature">Πισίνα</span>
+                        </div>
+                        <p class="property-description">Μονοκατοικία με ιδιωτική πισίνα, κήπο και γυμναστήριο.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Γέρακας</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 10 -->
+                <div class="property-card">
+                    <img src="../IMAGES/apartment_6.jpg" alt="Διαμέρισμα στο Γλυφάδα" class="property-image">
+                    <div class="property-details">
+                        <h3>Διαμέρισμα με Θέα</h3>
+                        <p class="property-price">480.000€</p>
+                        <div class="property-features">
+                            <span class="feature">95τ.μ.</span>
+                            <span class="feature">2 υπνοδωμάτια</span>
+                            <span class="feature">2 μπάνια</span>
+                            <span class="feature">Μπαλκόνι</span>
+                        </div>
+                        <p class="property-description">Διαμέρισμα με θέα στη θάλασσα και μεγάλο μπαλκόνι.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Γλυφάδα</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 11 -->
+                <div class="property-card">
+                    <img src="../IMAGES/villa_4.jpg" alt="Βίλα στο Σούνιο" class="property-image">
+                    <div class="property-details">
+                        <h3>Βίλα με Θέα στο Αιγαίο</h3>
+                        <p class="property-price">3.200.000€</p>
+                        <div class="property-features">
+                            <span class="feature">500τ.μ.</span>
+                            <span class="feature">6 υπνοδωμάτια</span>
+                            <span class="feature">5 μπάνια</span>
+                            <span class="feature">Πισίνα</span>
+                        </div>
+                        <p class="property-description">Πολυτελής βίλα με θέα στο Αιγαίο και ιδιωτική πισίνα.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Σούνιο</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 12 -->
+                <div class="property-card">
+                    <img src="../IMAGES/house_3.jpg" alt="Μονοκατοικία στο Αγία Παρασκευή" class="property-image">
+                    <div class="property-details">
+                        <h3>Μονοκατοικία με Κήπο</h3>
+                        <p class="property-price">890.000€</p>
+                        <div class="property-features">
+                            <span class="feature">250τ.μ.</span>
+                            <span class="feature">4 υπνοδωμάτια</span>
+                            <span class="feature">3 μπάνια</span>
+                            <span class="feature">Κήπος</span>
+                        </div>
+                        <p class="property-description">Μονοκατοικία με μεγάλο κήπο και υπόγειο χώρο στάθμευσης.</p>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Αγία Παρασκευή</span>
+                        </div>
+                        <a href="#index" class="property-btn">See more</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <!-- footer container 1 -->
+            <div class="footer-column">
+                <h4>Επικοινωνία</h4>
+                <ul>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-map-marker-alt"></i> Λεωφ. Καραμαλή 123, Λάρισα</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-phone"></i> 249 5054567</p></li>
+                    <li><p style="color: rgb(18, 18, 88)"><i class="fas fa-envelope"></i> info@teralith.gr</p></li>
+                </ul>
+            </div>
+
+            <!-- footer container 2 -->
+            <div class="footer-column">
+                <h4>Γρήγοροι Σύνδεσμοι</h4>
+                <ul>
+                    <li><a href="index.html">Αρχική</a></li>
+                    <li><a href="properties.html">Ακίνητα</a></li>
+                    <li><a href="services.html">Υπηρεσίες</a></li>
+                    <li><a href="about.html">Σχετικά</a></li>
+                    <li><a href="contact.html">Επικοινωνία</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- footer container 3 -->
+            <div class="footer-column">
+                <h4>Ακολουθήστε μας</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- External JavaScript that modifies the button via media queries to change the icon when inside the dropdown menu and when not inside. -->
+        <script src="../JAVASCRIPT/dropdown.js"></script>
+    </body>
+</html> 
