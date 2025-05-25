@@ -11,11 +11,11 @@
 }
 
 
-/*  smooth scroll behavior που θα χρησιμοποιηθεί για smooth transition απο <a> links σε <sections>*/
+/*  smooth scroll behavior που θα χρησιμοποιηθεί για smooth transition απο <a> links σε <sections>
 html {
     scroll-behavior: smooth;
 }
-
+*/
 
 /* Background Image + Image Scaling */
 body{
