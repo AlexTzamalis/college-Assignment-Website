@@ -193,6 +193,13 @@
                 margin: 0 auto;
             }
 
+            .achievements-container h2 {
+                text-align: center;
+                margin-bottom: 40px;
+                color: rgb(18, 18, 88);
+                font-size: 32px;
+            }
+
             .achievements-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -218,6 +225,7 @@
                 display: flex;
                 align-items: center;
                 gap: 16px;
+                font-size: 24px;
             }
 
             .achievement-card h3 i {
@@ -228,6 +236,7 @@
                 color: #666;
                 line-height: 1.6;
                 margin-bottom: 16px;
+                font-size: 16px;
             }
 
             .achievement-list {
@@ -240,13 +249,15 @@
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                margin-bottom: 8px;
+                margin-bottom: 12px;
                 color: #666;
+                font-size: 15px;
             }
 
             .achievement-list li i {
                 color: rgb(18, 18, 88);
                 font-size: 14px;
+                flex-shrink: 0;
             }
 
             @media screen and (max-width: 768px) {
@@ -266,8 +277,55 @@
                     white-space: nowrap;
                 }
 
+                .achievements-section {
+                    padding: 40px 20px;
+                }
+
+                .achievements-container h2 {
+                    font-size: 28px;
+                    margin-bottom: 30px;
+                }
+
                 .achievements-grid {
                     grid-template-columns: 1fr;
+                    gap: 24px;
+                }
+
+                .achievement-card {
+                    padding: 24px;
+                }
+
+                .achievement-card h3 {
+                    font-size: 22px;
+                    gap: 12px;
+                }
+
+                .achievement-card p {
+                    font-size: 15px;
+                }
+
+                .achievement-list li {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                .achievements-section {
+                    padding: 32px 16px;
+                }
+
+                .achievements-container h2 {
+                    font-size: 24px;
+                    margin-bottom: 24px;
+                }
+
+                .achievement-card {
+                    padding: 20px;
+                }
+
+                .achievement-card h3 {
+                    font-size: 20px;
                 }
             }
 
@@ -395,45 +453,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </section>
-
-            <!-- Επιπλέον υπηρεσίες που προσφέρει η εταιρεία μαζι με εικονίδια για καλύτερη παρουσίαση-->
-            <section class="additional-services">
-                <h2>Επιπλέον Υπηρεσίες</h2>
-
-                <!-- Grid για τις επιπλέον υπηρεσίες-->
-                <div class="services-grid-2">
-
-                    <!-- Card για την υπηρεσία ανακαίνισης και σχεδιασμού-->
-                    <div class="service-item">
-                        <h3><i class="fas fa-paint-roller"></i>Ανακαίνιση και Σχεδιασμός</h3>
-                        <p>Προσφέρουμε ολοκληρωμένες υπηρεσίες ανακαίνισης και σχεδιασμού για το σπίτι των ονείρων σας.</p>
-
-                        <ul class="service-features">
-                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
-                            <li><i class="fas fa-check"></i>Σχεδιασμός εσωτερικών χώρων</li>
-                            <li><i class="fas fa-check"></i>Ανακαίνιση κουζίνας και μπάνιου</li>
-                            <li><i class="fas fa-check"></i>Επισκευές και βελτιώσεις</li>
-                            <li><i class="fas fa-check"></i>Συνεργασία με έμπειρους τεχνικούς</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card για την υπηρεσία ασφαλείας ακινήτων-->
-                    <div class="service-item">
-                        <h3><i class="fas fa-shield-alt"></i>Ασφάλεια Ακινήτων</h3>
-                        <p>Προστατέψτε το ακίνητό σας με τις καλύτερες λύσεις ασφαλείας της αγοράς.</p>
-
-                        <ul class="service-features">
-                            <!-- Εικονίδια για τις επιπλέον υπηρεσίες-->
-                            <li><i class="fas fa-check"></i>Συστήματα συναγερμού</li>
-                            <li><i class="fas fa-check"></i>Κλειδαριές υψηλής ασφαλείας</li>
-                            <li><i class="fas fa-check"></i>Καμερές παρακολούθησης</li>
-                            <li><i class="fas fa-check"></i>Ασφαλιστικά πακέτα</li>
-                        </ul>
-                    </div>
-
- 
                 </div>
             </section>
 
