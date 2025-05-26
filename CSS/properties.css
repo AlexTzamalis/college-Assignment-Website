@@ -1,0 +1,248 @@
+/* External CSS file για το index.html και properties.html 
+  Εδώ υπάρχουν τα styles για τα ακίνητα που εμφανίζονται στην index.html και properties.html
+  Μερικα styles γίνονται overriden στο properties.html με εσωτερικό style*/
+
+/* Hero Section, στο index.html
+   Αλλάζει το χρώμα του hero section και το padding του και βάζει τα items στο κέντρο της σελίδας*/ 
+.hero{
+    position: relative;
+    padding: 96px 32px;
+    text-align: center;
+    background: rgba(133, 133, 133, 0.7); /* Background color*/
+    margin: 32px 0;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 250px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    margin-bottom: 32px;
+    color: #395d83; /* Text color*/
+}
+
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 32px;
+    color: #082949;
+}
+
+/* Hero section button, κουμπί για την προβολή ακινήτων και σε στέλνει στο properties.html (μόνο για το index.html) */
+.see-properties-button {
+  background: #0c57a7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Hero Section hover, όταν το ποντίκι βρίσκεται πάνω από το κουμπi (μόνο για το index.html) */
+.hero-content a:hover{
+    background: #033a75;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 10px rgba(0,0,0,0.5);
+    
+}
+
+/* Property Button, κουμπί ακινήτου ("Περισσότερα") Index.html + properties.html */
+.property-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0c57a7;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+/* Property Button hover, κουμπί ακινήτου ("Περισσότερα") hover, όταν το ποντίκι βρίσκεται πάνω από το κουμπί Index.html + properties.html */
+.property-btn:hover {
+  background-color: #033a75;
+}
+
+/* Recommended Property cards , Κάρτες ακινήτων που εμφανίζονται στην σελίδα index.html */
+.recommended-properties{
+    background-color: rgba(168, 168, 168, 0.637);
+    border-radius: 25px;
+    padding: 25px 25px 25px 25px;
+    margin: 100px;
+}
+
+/* Recommended Property cards title, Τίτλος των καρτών ακινήτων που εμφανίζονται στην σελίδα index.html */
+.recommended-properties h2{
+    display: flex;
+    justify-content: center;
+    color: rgb(29, 46, 121);
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Recommended Property cards container, container των καρτών ακινήτων που εμφανίζονται στην σελίδα index.html */
+.recommended-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+/* Recommended Property cards card, κάρτα ακινήτου που εμφανίζονται στην σελίδα index.html (note: Επιρεάζει μόνο το index.htm, το properties.html δεν επιρεάζεται διότι έχει δικό του style)*/
+.property-card {
+    width: 425px;
+    background: rgba(245, 252, 255, 0.9);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.4);
+    transition: transform 0.5s, box-shadow 0.5s;
+    margin: 25px;
+}
+/* Hover effect για την κάρτα ακινήτου  που εμφανίζονται στην σελίδα index.html (note: Επιρεάζει μόνο το index.htm, το properties.html δεν επιρεάζεται διότι έχει δικό του style)
+  */
+.property-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 12px rgba(0,0,0,0.6);
+}
+
+/* Επιρεάζει όλες τις εικ΄΄ονες ακινήτων και στο index.html και στο properties.html, */
+.property-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* Επιρεάζει το padding των καρτών ακινήτων στο index.html και στο properties.html */
+.property-details {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Επιρεάζει το font size του τίτλου των καρτών ακινήτων στο index.html και στο properties.html */
+.property-card h3{
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;;
+ }
+
+/* Επιρεάζει το font size του τιμής των καρτών ακινήτων στο index.html και στο properties.html */
+.property-price {
+    font-size: 24px;
+    color: #db0214;
+    font-weight: bold;
+    margin-bottom: 25px;
+
+}
+
+/* Επιρεάζει το font size της περιγραφής των καρτών ακινήτων στο index.html και στο properties.html */
+.property-card .class-description{
+    color: #2c3e50;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Επιρεάζει το button των καρτών ακινήτων στο index.html και στο properties.html */
+.property-card .property-card-button{
+    display: inline-block;
+    padding: 8px 16px;
+    background: #2c3e50;
+    border: none;
+    border-radius: 8px;
+    margin-top: 16px;
+    
+}
+
+.property-card .property-card-button a{
+    text-decoration: none;
+    padding: 15px;
+    font-size: 22px;
+    color: white
+}
+
+.property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 16px;
+}
+
+
+.feature {
+  background: rgba(20, 64, 107, 0.3);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: black;
+}
+
+/* Επιρεάζει το location των καρτών ακινήτων στο index.html και στο properties.html */
+.property-location{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+/* Επιρεάζει το location Icon των καρτών ακινήτων στο index.html και στο properties.html */
+.property-location i{
+    color: red;
+}
+
+/* --- Mobile Responsive Styles για όλα τα ακίνητα στο properties.html και στο index.html --- */
+@media (max-width: 768px) {
+  .recommended-properties {
+    margin: 20px 5px;
+    padding: 10px 5px;
+    border-radius: 12px;
+  }
+  .recommended-properties h2 {
+    font-size: 32px;
+    padding: 0 5px;
+  }
+  .recommended-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .property-card {
+    width: 100%;
+    max-width: 98vw;
+    margin: 12px 0;
+    border-radius: 10px;
+  }
+  .property-card img {
+    height: 180px;
+  }
+  .property-details {
+    padding: 10px 4px;
+  }
+  .property-card h3 {
+    font-size: 20px;
+  }
+  .property-price {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .property-features {
+    gap: 7px;
+    font-size: 12px;
+  }
+  .feature {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .property-location {
+    font-size: 13px;
+    gap: 4px;
+  }
+}

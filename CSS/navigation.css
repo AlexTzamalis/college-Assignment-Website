@@ -11,13 +11,13 @@
 }
 
 
-/*  smooth scroll behavior που θα χρησιμοποιηθεί για smooth transition απο <a> links σε <sections>
+/*  smooth scroll behavior που θα χρησιμοποιηθεί για smooth transition απο <a> links σε <sections> 
 html {
     scroll-behavior: smooth;
 }
 */
 
-/* Background Image + Image Scaling */
+/* Image Scaling σε column layout*/
 body{
     min-height: 100vh;
     flex-direction: column;
@@ -28,7 +28,7 @@ body{
 /* Βασικό στυλ για το navigation bar */
 /* Σωστή θέση για τα navigation tags και header tags στην ιστοσελίδα */
 /* Ενω χρησιμοποιείται η background image ως transparent background για το navigation bar με μικρό box shadow (Μονο για την αρχική σελίδα) 
-   Διοτι μόνο η Αρχική σελίδα έχει background image*/
+   δουλεύει με όλες τις σελίδες έχουν background image ή όχι ώστε να είναι responsive και να εχει fade effect στο navigation bar */
 .navbar {
     display: flex;
     align-items: center;
@@ -123,6 +123,7 @@ footer{
     padding: 30px 10%;
 }
 
+/* Αφαιρεί τα bullet points απο τα links του footer */
 footer ul{
     list-style: none;
 }
@@ -175,6 +176,7 @@ ul li a:hover{
         backdrop-filter: none;
     }
 
+    /* display του menu για το mobile menu */
     .navbar-container .navbar-menu{
         display: none;
         flex-direction: column;
@@ -190,23 +192,30 @@ ul li a:hover{
         backdrop-filter: blur(10px);
     }
 
+    /* display του menu για το mobile menu */
     .navbar-container .navbar-menu.active{
         display: flex;
     }
 
+    /* display του toggle button για το mobile menu */
     .navbar-toggle{
         display: block;
         z-index: 999;
     }
 
+    /* span line transtition για το animation του menu οσο κάνει εναλλαγη απο χ σε 3 lines */
+
+    /* transition  2ου span line του menu */
     .navbar-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
 
+    /* transition 1ου span line του menu */
     .navbar-toggle.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
+    /* transition  3ου span line του menu */
     .navbar-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
