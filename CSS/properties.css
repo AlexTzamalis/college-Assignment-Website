@@ -2,6 +2,12 @@
   Εδώ υπάρχουν τα styles για τα ακίνητα που εμφανίζονται στην index.html και properties.html
   Μερικα styles γίνονται overriden στο properties.html με εσωτερικό style*/
 
+/* Απλός τρόπος για να επιτρέπει την συμπεριφορά του scroll στο index.html και properties.html 
+  όταν πατιέται ένα link που οδηγεί σε section της σελίδας, το scroll να γίνεται "smoothly"*/
+html{
+  scroll-behavior: smooth;
+}
+
 /* Hero Section, στο index.html
    Αλλάζει το χρώμα του hero section και το padding του και βάζει τα items στο κέντρο της σελίδας*/ 
 .hero{
