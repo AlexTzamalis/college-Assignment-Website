@@ -34,13 +34,14 @@
         <!-- Internal CSS Για την σελίδα FAQ -->
         <style>
 
-            /* */
+            /* container για όλες τησ κάρτες FAQ*/
             .faq-container {
                 max-width: 1200px;
                 margin: 50px auto;
                 padding: 0 20px;
             }
 
+            /* στυλ για τον Τίτλο */
             .faq-title {
                 text-align: center;
                 color: #395d83;
@@ -48,10 +49,12 @@
                 margin-bottom: 40px;
             }
 
+            /* section / container που κράτάει της κάρτες ανα κατηγορία*/
             .faq-section {
                 margin-bottom: 30px;
             }
 
+            /* στυλ για τους υπο τιτλους ανα κατηγορία*/
             .faq-section h2 {
                 color: #34495e;
                 font-size: 1.8em;
@@ -60,7 +63,8 @@
                 padding-bottom: 10px;
             }
 
-            .faq-item {
+            /* στύλ για της Κάρτα FAQ */
+            .faq-card {
                 background: #f8f9fa;
                 border-radius: 8px;
                 margin-bottom: 15px;
@@ -72,11 +76,12 @@
             /* Hover effect για της κάρτες FAQ με ερωτήσεις, αλλάζοντας το transform και ανέβαζει την κάρτα κατα -4Pixel προς τα πάνω (Y άξονας)
                και αλλάζει το bow shadow με μεγαλυτερη σκυά ωστε να φαίνεται η διαφορα με hover και no-hover πάνω απο της κάρτες
                Επιπλέον ανεβάζει το scale κατα 1.02 που ειναι πολαπλασιαμος του αρχικου "scale" αρα 2% μεγαλύτερο ωστε να φαινεται μεγαλύτερη η hovered κάρτα*/
-            .faq-item:hover {
+            .faq-card:hover {
                 transform: translateY(-4px) scale(1.02);
                 box-shadow: 0 8px 12px rgba(0,0,0,0.5);
             }
 
+            /* Στύλ για το της ερωτήσεις FAQ */
             .faq-question {
                 color: #395d83;
                 font-size: 1.2em;
@@ -86,17 +91,21 @@
                 align-items: center;
             }
 
+            /* Στύλ για το ερωτηματικο icon*/
             .faq-question i {
                 margin-right: 10px;
                 color: #34495e;
             }
 
+            /* Στύλ για της απαντήσεις FAQ */
             .faq-answer {
                 color: #2c3e50;
                 line-height: 1.6;
                 padding-left: 30px;
             }
 
+            /* Media query, Όταν το πλάτος της οθόνης ειναι κάτω απο 768 Pixels 
+               Αλλάζει το μέγεθος του Τιτλου, header, και του text για να χωράει σε μικρότερες οθόνες (mobile-tablet)*/
             @media (max-width: 768px) {
                 .faq-title {
                     font-size: 2em;
@@ -155,11 +164,11 @@
                 <h1 class="faq-title">Συχνές Ερωτήσεις</h1> <!--Header title μέσα στο body-->
 
                 <!-- section 1 - Γενικές ερωτήσεις-->
-                <div class="faq-section">
+                <div class="faq-section" style="margin-bottom: 30px;">
                     <h2>Γενικές Ερωτήσεις</h2>
                     
                     <!-- Question - Ερωτηση 1 (Γενικές Ερωτήσεις)-->
-                    <div class="faq-item">
+                    <div class="faq-card">
 
                         <!-- Ερωτηση -->
                         <div class="faq-question">
@@ -174,7 +183,7 @@
                     </div>
 
                     <!-- Question - Ερωτηση 2 (Γενικές Ερωτήσεις) -->
-                    <div class="faq-item">
+                    <div class="faq-card">
 
                         <!-- Ερωτηση -->
                         <div class="faq-question">
@@ -190,11 +199,11 @@
                 </div>
 
                 <!-- section 2 - Οικονομικά-->
-                <div class="faq-section">
+                <div class="faq-section" style="margin-bottom: 30px;">
                     <h2>Οικονομικά</h2>
                     
                     <!-- Question - Ερωτηση 1 (Οικονομικά)-->
-                    <div class="faq-item">
+                    <div class="faq-card">
 
                         <!-- Ερωτηση -->
                         <div class="faq-question">
@@ -209,7 +218,7 @@
                     </div>
 
                     <!-- Question - Ερωτηση 2 (Οικονομικά)-->
-                    <div class="faq-item">
+                    <div class="faq-card">
 
                         <!-- Ερωτηση -->
                         <div class="faq-question">
@@ -225,11 +234,11 @@
                 </div>
 
                 <!-- section 3 - Υπηρεσίες-->
-                <div class="faq-section">
+                <div class="faq-section" style="margin-bottom: 30px;">
                     <h2>Υπηρεσίες</h2>
                     
                     <!-- Question - Ερωτηση 1 (Υπηρεσιες)-->
-                    <div class="faq-item">
+                    <div class="faq-card">
 
                         <!-- Ερωτηση -->
                         <div class="faq-question">
@@ -244,7 +253,7 @@
                     </div>
 
                     <!-- Question - Ερωτηση 2 (Υπηρεσιες)-->
-                    <div class="faq-item">
+                    <div class="faq-card">
 
                         <!-- Ερωτηση -->
                         <div class="faq-question">
