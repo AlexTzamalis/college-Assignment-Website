@@ -15,7 +15,6 @@
 -->
 
 <html lang="el">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,10 +73,11 @@
                 transition: transform 0.4s, box-shadow 0.4s;
             }
 
-            /* Οταν Βρίσκεται το ποντίκι πάνω από το κουμπί η τοποθεσία της κάρτας αλλάζει προς τα πάνω κατ΄ά 10pixel
-               στον (Υ) άξονα και αυξάνει το box shadow παραπάνω απο το 0.2 */
+            /* Hover effect για της κάρτες εταιρειας, αλλάζοντας το transform και ανέβαζει την κάρτα κατα -10Pixel προς τα πάνω (Y άξονας)
+               και αλλάζει το bow shadow με μεγαλυτερη σκυά ωστε να φαίνεται η διαφορα με hover και no-hover πάνω απο της κάρτες
+               Επιπλέον ανεβάζει το scale κατα 1.02 που ειναι πολαπλασιαμος του αρχικου "scale" αρα 2% μεγαλύτερο ωστε να φαινεται μεγαλύτερη η hovered κάρτα*/
             .company-info-card:hover {
-                transform: translateY(-10px);
+                transform: translateY(-10px) scale(1.02);
                 box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
             }
 

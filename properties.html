@@ -11,11 +11,10 @@
 -->
 
 <html lang="el">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Teralith - Ακίνητα	</title>
+        <title> Teralith - Ακίνητα	</title> <!-- Τίτλος της σελίδας + το όνομα της σελίδας -->
         
         <!--  Εξωτερικά CSS αρχεία
             styles.css: Βασικά στυλ για ολες τις σελίδες.
@@ -112,7 +111,10 @@
 
             /* OVERIDDEN STYLES FROM style.css (Δεν χρησιμοποιείται ακριβ΄ως το ίδιο style εδω όπως στο style.css διότι το index.html με το properties.html έχουν διαφορετικο τρόπο 
                που φαινονται τα ακίνητα, το ένα έχει grid layout ενώ το index.html έχει πιο απλό τρόπο εμφάνισης των ακινήτων)
-            */
+
+               Hover effect για της κάρτες Ακινήτων, αλλάζοντας το transform και ανέβαζει την κάρτα κατα -10Pixel προς τα πάνω (Y άξονας)
+               και αλλάζει το bow shadow με μεγαλυτερη σκυά ωστε να φαίνεται η διαφορα με hover και no-hover πάνω απο της κάρτες
+               Επιπλέον ανεβάζει το scale κατα 1.02 που ειναι πολαπλασιαμος του αρχικου "scale" αρα 2% μεγαλύτερο ωστε να φαινεται μεγαλύτερη η hovered κάρτα*/
             .property-card:hover {
                 transform: translateY(-10px) scale(1.02);
                 box-shadow: 0 10px 12px rgba(0,0,0,0.6);

@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <!-- 
-    ============================================================
     Σχετικά με εμάς - Real Estate Website (Teralith)
-    ===========================================================
     
     Αυτή είναι η σελίδα "Σχετικά με εμάς" του Teralith Project.
     Παρουσιάζει την ιστορία της εταιρείας, την ομάδα μας,
@@ -11,10 +9,9 @@
 
 <html lang="el">
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Teralith - Σχετικά με εμάς</title>
+        <title>Teralith - Σχετικά με εμάς</title> <!-- Τίτλος της σελίδας + το όνομα της σελίδας -->
         
         <!--  Εξωτερικά CSS αρχεία
             navigation.css: Ολα τα βασικα στυλ για Headers/Navigation/Logo/Footer και μερικά εξτρά όπως Universal selectors (*). -->
@@ -83,9 +80,12 @@
                 transition: transform 0.4s, box-shadow 0.4s;
             }
 
+            /* Hover effect για της κάρτες της ιστορίας, αλλάζοντας το transform και ανέβαζει την κάρτα κατα -10Pixel προς τα πάνω (Y άξονας)
+               και αλλάζει το bow shadow με μεγαλυτερη σκυά ωστε να φαίνεται η διαφορα με hover και no-hover πάνω απο της κάρτες
+               Επιπλέον ανεβάζει το scale κατα 1.02 που ειναι πολαπλασιαμος του αρχικου "scale" αρα 2% μεγαλύτερο ωστε να φαινεται μεγαλύτερη η hovered κάρτα*/
             .mission-card:hover {
                 transform: translateY(-10px) scale(1.02);
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 12px 15px rgba(0, 0, 0, 0.5);
             }
 
             .mission-card i {
@@ -212,9 +212,12 @@
                 transition: transform 0.4s, box-shadow 0.4s;
             }
 
+            /* Hover effect για της κάρτες επιτευγμάτων, αλλάζοντας το transform και ανέβαζει την κάρτα κατα -7Pixel προς τα πάνω (Y άξονας)
+               και αλλάζει το bow shadow με μεγαλυτερη σκυά ωστε να φαίνεται η διαφορα με hover και no-hover πάνω απο της κάρτες
+               Επιπλέον ανεβάζει το scale κατα 1.02 που ειναι πολαπλασιαμος του αρχικου "scale" αρα 2% μεγαλύτερο ωστε να φαινεται μεγαλύτερη η hovered κάρτα*/
             .achievement-card:hover {
                 transform: translateY(-7px) scale(1.02);
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 12px 15px rgba(0, 0, 0, 0.5);
             }
 
             .achievement-card h3 {
