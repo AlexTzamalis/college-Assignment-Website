@@ -81,8 +81,9 @@ body{
     border: 1px solid transparent;
     /*transition: all 0.6s ease; */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.5s box-shadow 0.5s;
     white-space: nowrap;
+    transition: transform 0.4s, box-shadow 0.4s;
+    
 }
 
 /* Στύλ για τα links του menu όταν ο χρήστης περνά το ποντίκι πάνω από το link και το link είναι active */
