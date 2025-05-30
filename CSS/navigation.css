@@ -265,3 +265,8 @@ ul li a:hover{
         font-weight: 200;
     }
 }
+
+/* Στυλ για όλα τα image sources ώστε να φαίνονται μόνο στον κώδικα. */
+.image-source{
+    font-size: 0px;
+}

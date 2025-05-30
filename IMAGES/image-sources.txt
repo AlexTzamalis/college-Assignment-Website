@@ -51,7 +51,5 @@ background_2.1  1920x1280
 https://www.pexels.com/photo/city-buildings-and-green-trees-near-ocean-1337144/
 background_2.2  1280x853
 
-https://www.freepik.com/free-photo/midtown-manhattan-new-york-city-usa_10073544.htm#fromView=search&page=1&position=29&uuid=3f63e428-c123-4546-b102-a510c11d6e51&query=city
-background_4
 
 
