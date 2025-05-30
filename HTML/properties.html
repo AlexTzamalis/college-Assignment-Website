@@ -1,26 +1,25 @@
 <!DOCTYPE HTML>
-<!-- 
-    Properties/Ακίνήτα - Real Estate Website (Teralith)
-
-    Η σελίδα αυτή εμφανίζει όλα τα ακίνητα που έχουν αποθηκευτεί στη βάση δεδομένων.
-    Εμφανίζονται 12 ακίνητα σε grid layout (3 στήλες σε desktop, 2 στήλες σε tablet και 1 στήλη σε mobile (Θεωρητικά! ανάλογα της αναλογίες width x height)). 
-    Κάθε ακίνητο έχει μία εικόνα (image), έναν τίτλο (title), μία τιμή (price), μία σύντομη περιγραφή (description) ,Τοποθεσία (location) και ένα κουμπί (button) για να δείτε περισσότερες πληροφορίες.
-    Το grid layout είναι responsive και εμφανίζεται σε 3 στήλες σε desktop, 2 στήλες σε tablet και 1 στήλη σε mobile.
-    Το κάθε ακίνητο έχει ένα link που δεν συνδέει με την σελίδα του ακινήτου γιατι δεν φτάνουν οι απαιτούμενες σελίδες για την εργασία, οπότε ειναι placeholder buttons που συνδέονται με το index.html
-    
--->
-
 <html lang="el">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Teralith - Ακίνητα	</title> <!-- Τίτλος της σελίδας + το όνομα της σελίδας -->
+        <title> Teralith - Ακίνητα	</title>
+        
+        <!-- 
+            Properties/Ακίνήτα - Real Estate Website (Teralith)
+
+            Η σελίδα αυτή εμφανίζει όλα τα ακίνητα που έχουν αποθηκευτεί στη βάση δεδομένων.
+            Εμφανίζονται 12 ακίνητα σε grid layout (3 στήλες σε desktop, 2 στήλες σε tablet και 1 στήλη σε mobile (Θεωρητικά! ανάλογα της αναλογίες width x height)). 
+            Κάθε ακίνητο έχει μία εικόνα (image), έναν τίτλο (title), μία τιμή (price), μία σύντομη περιγραφή (description) ,Τοποθεσία (location) και ένα κουμπί (button) για να δείτε περισσότερες πληροφορίες.
+            Το grid layout είναι responsive και εμφανίζεται σε 3 στήλες σε desktop, 2 στήλες σε tablet και 1 στήλη σε mobile.
+            Το κάθε ακίνητο έχει ένα link που δεν συνδέει με την σελίδα του ακινήτου γιατι δεν φτάνουν οι απαιτούμενες σελίδες για την εργασία, οπότε ειναι placeholder buttons που συνδέονται με το index.html
+        -->
         
         <!--  Εξωτερικά CSS αρχεία
             styles.css: Βασικά στυλ για ολες τις σελίδες.
             navigation.css: Ολα τα βασικα στυλ για Headers/Navigation/Logo/Footer και μερικά εξτρά όπως Universal selectors (*). -->
-        <link rel="stylesheet" href="CSS/navigation.css">
-        <link rel="stylesheet" href="CSS/properties.css">
+        <link rel="stylesheet" href="../CSS/navigation.css">
+        <link rel="stylesheet" href="../CSS/properties.css">
     
         <!-- EMBEDED CODE FROM GOOGLE FONTS https://fonts.google.com/selection/embed
             Google Fonts: Εισαγωγή της γραμματοσειράς Montserrat με διαφορετικά βάρη (Weight:).
@@ -151,7 +150,7 @@
                 <div class="navbar-container">
 
                     <!-- Logo Εταιρείας με link προς την αρχική σελίδα-->
-                    <a href="index.html" class="navbar-logo">Teralith</a> 
+                    <a href="../index.html" class="navbar-logo">Teralith</a> 
 
                     <!-- Button για το dropdown menu στο mobile device-->
                     <button class="navbar-toggle">
@@ -164,11 +163,11 @@
                     <!-- unordered list που περιέχει όλα τα links του navigation bar και το active page που αλλάζει χρώμα όταν είστε σε μια σελίδα
                          Ωστε να διαφέρει απο τα αλλα links ανάλογα με την σελίδα που είστε. -->
                     <ul class="navbar-menu">
-                        <li><a href="index.html">Αρχική</a></li>
-                        <li><a href="properties.html" class="active-page">Ακίνητα</a></li>
-                        <li><a href="services.html">Υπηρεσίες</a></li>
-                        <li><a href="about.html">Σχετικά με εμάς</a></li>
-                        <li><a href="contact.html">Επικοινωνία</a></li>
+                        <li><a href="../index.html">Αρχική</a></li>
+                        <li><a href="../HTML/properties.html" class="active-page">Ακίνητα</a></li>
+                        <li><a href="../HTML/services.html">Υπηρεσίες</a></li>
+                        <li><a href="../HTML/about.html">Σχετικά με εμάς</a></li>
+                        <li><a href="../HTML/contact.html">Επικοινωνία</a></li>
                     </ul>
                 </div>
             </nav>
@@ -210,26 +209,27 @@
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας
                          Παράδειγμα lazyLoading: https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading -->
-                    <img src="IMAGES/apartment/apartment_1.jpg" alt="Πολυτελές διαμέρισμα στο Κολωνάκι" class="property-image" loading="lazy">
+                    <img src="../IMAGES/apartment/apartment_1.jpg" alt="Μοντέρνο διαμέρισμα με θέα στη θάλασσα, πλήρως ανακαινισμένο." class="property-image" loading="lazy">
                     <div class="property-details">
                         <h3>Πολυτελές Διαμέρισμα</h3>
                         <p class="property-price">350.000€</p>
 
                         <div class="property-features">
-                            <span class="feature">150τ.μ.</span>
+                            <span class="feature">110τ.μ.</span>
                             <span class="feature">3 υπνοδωμάτια</span>
                             <span class="feature">2 μπάνια</span>
                             <span class="feature">Πάρκινγκ</span>
                         </div>
 
-                        <p class="property-description">Πολυτελές διαμέρισμα στο Κολωνάκι, με θέα στην Ακρόπολη.</p>
+                        <p class="property-description">Μοντέρνο διαμέρισμα με θέα στη θάλασσα, πλήρως ανακαινισμένο.</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Κολωνάκι</span>
+                            <span>Greece, Γλυδάδα</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -237,26 +237,29 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/mansion/mansion_1.jpg" alt="Πολυτελής βίλα στη Βουλιαγμένη" class="property-image" loading="lazy">
+                    <img src="../IMAGES/mansion/mansion_1.jpg" alt="Πολυτελής βίλα στην Λευκάδα" class="property-image" loading="lazy">
                     <div class="property-details">
                         <h3>Πολυτελής Βίλα</h3>
-                        <p class="property-price">1.200.000€</p>
+                        <p class="property-price">2.400.000€</p>
 
                         <div class="property-features">
                             <span class="feature">350τ.μ.</span>
                             <span class="feature">5 υπνοδωμάτια</span>
                             <span class="feature">4 μπάνια</span>
+                            <span class="feature">2 Κουζίνες</span>
                             <span class="feature">Πισίνα</span>
+                            <span class="feature">Υπόγειο Πάρκινγκ</span>
                         </div>
 
-                        <p class="property-description">Πολυτελής βίλα με ιδιωτική πισίνα και θέα στη θάλασσα.</p>
+                        <p class="property-description">Πολυτελής βίλα με ιδιωτική πισίνα και θέα στη θάλασσα.</p> 
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Βουλιαγμένη</span>
+                            <span>Greece, Λευκάδα</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -264,26 +267,27 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/resedential/resedential_1.jpg" alt="Μονοκατοικία στο Διόνυσο" class="property-image" loading="lazy">
+                    <img src="../IMAGES/resedential/resedential_1.jpg" alt="Μονοκατοικία στο Κολονάκι" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Μονοκατοικία με Κήπο</h3>
-                        <p class="property-price">750.000€</p>
+                        <h3>Αρχαία Μονοκατοικία </h3>
+                        <p class="property-price">400.000€</p>
 
                         <div class="property-features">
                             <span class="feature">280τ.μ.</span>
-                            <span class="feature">4 υπνοδωμάτια</span>
-                            <span class="feature">3 μπάνια</span>
-                            <span class="feature">Κήπος</span>
+                            <span class="feature">3 υπνοδωμάτια</span>
+                            <span class="feature">2 μπάνια</span>
+                            <span class="feature">2 ορόφοι</span>
                         </div>
 
-                        <p class="property-description">Μονοκατοικία με μεγάλο κήπο και θέα στο Πάρνηθα.</p>
+                        <p class="property-description">Αρχαία Μονοκατοικία με μεγάλο εσωτερικό χώρο στο Κολονάκι</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Διόνυσο</span>
+                            <span>Greece, Κολονάκι</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -291,26 +295,27 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/apartment/apartment_2.jpg" alt="Νεόδμητο διαμέρισμα στο Χαλάνδρι" class="property-image" loading="lazy">
+                    <img src="../IMAGES/apartment/apartment_2.jpg" alt="Διαμέρισμα διαμέρισμα στο Χαλάνδρι" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Νεόδμητο Studio</h3>
+                        <h3>Studio Διαμέρισμα</h3>
                         <p class="property-price">180.000€</p>
 
                         <div class="property-features">
-                            <span class="feature">45τ.μ.</span>
+                            <span class="feature">60τ.μ.</span>
                             <span class="feature">1 υπνοδωμάτιο</span>
                             <span class="feature">1 μπάνιο</span>
                             <span class="feature">Μπαλκόνι</span>
                         </div>
                         
-                        <p class="property-description">Νεόδμητο studio ιδανικό για επενδυτές ή νέους επαγγελματίες.</p>
+                        <p class="property-description">Διαμέρισμα studio ιδανικό για επενδυτές ή νέους επαγγελματίες.</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Χαλάνδρι</span>
-                        </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+                            <span>Greece, Χαλάνδρι</span>
+                        </div> 
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -318,26 +323,29 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/mansion/mansion_2.jpg" alt="Βίλα στο Παλαιό Φάληρο" class="property-image" loading="lazy">
+                    <img src="../IMAGES/mansion/mansion_2.jpg" alt="Μοντέρνη Βίλα στήν Γλυδάδα" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Μονοκατοικία με Θέα</h3>
-                        <p class="property-price">680.000€</p>
+                        <h3>Μοντέρνη Βίλα</h3>
+                        <p class="property-price">1.450.000€</p>
 
                         <div class="property-features">
                             <span class="feature">200τ.μ.</span>
-                            <span class="feature">4 υπνοδωμάτια</span>
-                            <span class="feature">3 μπάνια</span>
-                            <span class="feature">Τεράστια</span>
+                            <span class="feature">6 υπνοδωμάτια</span>
+                            <span class="feature">3 μπάνιο</span>
+                            <span class="feature">2 κουζίνες</span>
+                            <span class="feature">Πισίνα</span>
+                            <span class="feature">6 Πάρκινγκ</span>
                         </div>
 
-                        <p class="property-description">Μονοκατοικία με θέα στη θάλασσα και μεγάλη βεράντα.</p>
+                        <p class="property-description">Μοντέρνη βίλα με πισίνα.</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Παλαιό Φάληρο</span>
+                            <span>Greece, Γλυδάδα</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -345,22 +353,25 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/resedential/resedential_2.jpg" alt="Διαμέρισμα στο Ψυχικό" class="property-image" loading="lazy">
+                    <img src="../IMAGES/resedential/resedential_2.jpg" alt="Μονοκατοικία με κήπο στη Λάρισα" class="property-image" loading="lazy">
                     <div class="property-details">
                         <h3>Διαμέρισμα με Κήπο</h3>
-                        <p class="property-price">420.000€</p>
+                        <p class="property-price">400.000€</p>
                         <div class="property-features">
-                            <span class="feature">110τ.μ.</span>
+                            <span class="feature">250τ.μ.</span>
                             <span class="feature">3 υπνοδωμάτια</span>
-                            <span class="feature">2 μπάνια</span>
+                            <span class="feature">2 μπάνιο</span>
                             <span class="feature">Κήπος</span>
+                            <span class="feature">Πάρκινκ</span>
                         </div>
                         <p class="property-description">Διαμέρισμα με ιδιωτικό κήπο και υπόγειο χώρο στάθμευσης.</p>
+
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Ψυχικό</span>
+                            <span>Greece, Λάρισα</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -368,26 +379,31 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/mansion/mansion_3.jpg" alt="Πολυτελής βίλα στο Κηφισιά" class="property-image" loading="lazy">
+                    <img src="../IMAGES/mansion/mansion_3.jpg" alt="Πολυτελής βίλα στην Λάρισα" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Πολυτελής Βίλα με Θέα</h3>
-                        <p class="property-price">2.500.000€</p>
+                        <h3>Πολυτελής Βίλα με Κήπο</h3>
+                        <p class="property-price">5.500.000€</p>
 
                         <div class="property-features">
-                            <span class="feature">450τ.μ.</span>
+                            <span class="feature">750τ.μ.</span>
                             <span class="feature">6 υπνοδωμάτια</span>
                             <span class="feature">5 μπάνια</span>
                             <span class="feature">Σπα</span>
+                            <span class="feature">γυμναστήριο</span>
+                            <span class="feature">Υπόγειο Πάρκινγκ</span>
+                            <span class="feature">Πισίνα</span>
+                            <span class="feature">Κήπος</span>
                         </div>
 
-                        <p class="property-description">Πολυτελής βίλα με ιδιωτικό σπα, γυμναστήριο και θέα στην Αθήνα.</p>
+                        <p class="property-description">Πολυτελής βίλα με ιδιωτικό σπα, γυμναστήριο και τεράστιο κήπο </p>
                         
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Κηφισιά</span>
+                            <span>Greece, Λάρισα</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -395,26 +411,27 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/resedential/resedential_3.jpg" alt="Πεντάδυμα στο Μαρούσι" class="property-image" loading="lazy">
+                    <img src="../IMAGES/resedential/resedential_3.jpg" alt="Μικρή Μονοκατοικία στα τρίκαλα" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Πεντάδυμα Διαμέρισμα</h3>
-                        <p class="property-price">950.000€</p>
+                        <h3>Μικρή Μονοκατοικία</h3>
+                        <p class="property-price">160.000€</p>
 
                         <div class="property-features">
-                            <span class="feature">180τ.μ.</span>
-                            <span class="feature">5 υπνοδωμάτια</span>
-                            <span class="feature">3 μπάνια</span>
-                            <span class="feature">Τέρρα</span>
+                            <span class="feature">120τ.μ.</span>
+                            <span class="feature">2 υπνοδωμάτια</span>
+                            <span class="feature">1 μπάνιο</span>
+                            <span class="feature">κήπος</span>
                         </div>
 
-                        <p class="property-description">Πεντάδυμα διαμέρισμα με μεγάλη τέρρα και θέα στο βουνό.</p>
+                        <p class="property-description">Μικρή Μονοκατοικία με μεγάλο κήπο και θέα στο βουνό.</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Μαρούσι</span>
+                            <span>Greece, Τρίκαλα</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -422,26 +439,29 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/apartment/apartment_3.jpg" alt="Μονοκατοικία στο Γέρακα" class="property-image" loading="lazy">
+                    <img src="../IMAGES/apartment/apartment_3.jpg" alt="Πολυτελές Penthouse στο monaco" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Μονοκατοικία με Πισίνα</h3>
-                        <p class="property-price">1.800.000€</p>
+                        <h3>Πολυτελές Penthouse</h3>
+                        <p class="property-price">4.800.000€</p>
 
                         <div class="property-features">
                             <span class="feature">320τ.μ.</span>
                             <span class="feature">5 υπνοδωμάτια</span>
                             <span class="feature">4 μπάνια</span>
-                            <span class="feature">Πισίνα</span>
+                            <span class="feature">Εσωτερική Πισίνα</span>
+                            <span class="feature">Πάρκινγκ</span>
+                            <span class="feature">γυμναστήριο</span>
                         </div>
 
-                        <p class="property-description">Μονοκατοικία με ιδιωτική πισίνα, κήπο και γυμναστήριο.</p>
+                        <p class="property-description">Πολυτελές Penthouse με ιδιωτική πισίνα, βεράντα και γυμναστήριο.</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Γέρακας</span>
+                            <span>Monaco, Monte-Carlo</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -449,26 +469,30 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/mansion/mansion_4.jpg" alt="Διαμέρισμα στο Γλυφάδα" class="property-image" loading="lazy">
+                    <img src="../IMAGES/mansion/mansion_4.jpg" alt="Βίλα στην θάλλασα με θέα το miami beach" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Διαμέρισμα με Θέα</h3>
-                        <p class="property-price">480.000€</p>
+                        <h3>Βίλα στην θάλλασα</h3>
+                        <p class="property-price">12.880.000€</p>
 
                         <div class="property-features">
-                            <span class="feature">95τ.μ.</span>
-                            <span class="feature">2 υπνοδωμάτια</span>
-                            <span class="feature">2 μπάνια</span>
-                            <span class="feature">Μπαλκόνι</span>
+                            <span class="feature">1.150τ.μ.</span>
+                            <span class="feature">7 υπνοδωμάτια</span>
+                            <span class="feature">7 μπάνια</span>
+                            <span class="feature">Κήπος</span>
+                            <span class="feature">γυμναστήριο</span>
+                            <span class="feature">Ιδιοτικό λιμάνι</span>
+                            <span class="feature">Πισίνα</span>
                         </div>
 
-                        <p class="property-description">Διαμέρισμα με θέα στη θάλασσα και μεγάλο μπαλκόνι.</p>
+                        <p class="property-description">Μοντέρνη Βίλα με θέα την θάλλασα στο miami beach, ιδιοτικό λιμάνι και πολλα αλλα.</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Γλυφάδα</span>
+                            <span>Florida, Miami Beach</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -476,26 +500,28 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/apartment/apartment_4.jpg" alt="Βίλα στο Σούνιο" class="property-image" loading="lazy">
+                    <img src="../IMAGES/apartment/apartment_4.jpg" alt="Βίλα στο Σούνιο στην Κεφαλονιά" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Βίλα με Θέα στο Αιγαίο</h3>
-                        <p class="property-price">3.200.000€</p>
+                        <h3>Αρχαίο Διαμέρισμα</h3>
+                        <p class="property-price">320.000€</p>
 
                         <div class="property-features">
-                            <span class="feature">500τ.μ.</span>
-                            <span class="feature">6 υπνοδωμάτια</span>
-                            <span class="feature">5 μπάνια</span>
-                            <span class="feature">Πισίνα</span>
+                            <span class="feature">200τ.μ.</span>
+                            <span class="feature">3 υπνοδωμάτια</span>
+                            <span class="feature">2 μπάνιο</span>
+                            <span class="feature">Βεράντα</span>
+                            <span class="feature">Πάρκινγκ</span>
                         </div>
 
-                        <p class="property-description">Πολυτελής βίλα με θέα στο Αιγαίο και ιδιωτική πισίνα.</p>
+                        <p class="property-description">Αρχαίο Διαμέρισμα με θέα την Κεφαλονιά</p>
 
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Σούνιο</span>
+                            <span>Greece, Κεφαλονιά</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
 
@@ -503,9 +529,9 @@
                 <div class="property-card">
 
                     <!-- IMAGES, οι εικόνες εχουν alt attribute για screen readers και loading=lazy ωστε να μην φορτώνονται αμέσως και να είναι πιο γρήγορη η φόρτωση της σελίδας-->
-                    <img src="IMAGES/mansion/mansion_5.jpg" alt="Μονοκατοικία στο Αγία Παρασκευή" class="property-image" loading="lazy">
+                    <img src="../IMAGES/mansion/mansion_5.jpg" alt="Μονοκατοικία στο Αγία Παρασκευή" class="property-image" loading="lazy">
                     <div class="property-details">
-                        <h3>Μονοκατοικία με Κήπο</h3>
+                        <h3>Βίλα </h3>
                         <p class="property-price">890.000€</p>
 
                         <div class="property-features">
@@ -520,9 +546,10 @@
                         <!-- Location icon, εικονίδιο τοποθεσίας-->
                         <div class="property-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Αγία Παρασκευή</span>
+                            <span>Spain, Madrid</span>
                         </div>
-                        <a href="#index" class="property-btn">Περισσότερα</a>
+
+                        <a href="#index" class="property-btn">Περισσότερα</a> <!-- Σε πηγαίνει στο πάνω μέρος της σελίδας διότι δεν υπάρχουν πληροφορίες για κάθε ακίνητο-->
                     </div>
                 </div>
             </div>
@@ -546,12 +573,12 @@
             <div class="footer-column">
                 <h4>Γρήγοροι Σύνδεσμοι</h4>
                 <ul>
-                    <li><a href="index.html">Αρχική</a></li>
-                    <li><a href="properties.html">Ακίνητα</a></li>
-                    <li><a href="services.html">Υπηρεσίες</a></li>
-                    <li><a href="about.html">Σχετικά</a></li>
-                    <li><a href="contact.html">Επικοινωνία</a></li>
-                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="../index.html">Αρχική</a></li>
+                    <li><a href="../HTML/properties.html">Ακίνητα</a></li>
+                    <li><a href="../HTML/services.html">Υπηρεσίες</a></li>
+                    <li><a href="../HTML/about.html">Σχετικά</a></li>
+                    <li><a href="../HTML/contact.html">Επικοινωνία</a></li>
+                    <li><a href="../HTML/FAQ.html">FAQ</a></li>
                 </ul>
             </div>
 
@@ -568,7 +595,7 @@
 
         <!-- External JavaScript που αλλάζει το icon του dropdown menu ανάλογα με την κατάσταση του menu (Η "X" ή το "3 lines" span)
              Υπάρχει σε όλες τις σελίδες και είναι το ίδιο script μαζι με το Navigation bar της σελίδας. -->
-        <script src="JAVASCRIPT/dropdown.js"></script>
+        <script src="../JAVASCRIPT/dropdown.js"></script>
 
     </body>
 </html> 
